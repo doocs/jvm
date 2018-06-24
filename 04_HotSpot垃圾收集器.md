@@ -2,7 +2,7 @@
 * [新生代垃圾收集器](#新生代垃圾收集器)
   * [Serial 垃圾收集器](#serial-垃圾收集器)
   * [ParNew 垃圾收集器](#parNew-垃圾收集器)
-  * [Parallel Scavenge 垃圾收集器](parallel-scavenge-垃圾收集器)
+  * [Parallel Scavenge 垃圾收集器](#parallel-scavenge-垃圾收集器)
 * [老年代垃圾收集器](#老年代垃圾收集器)
   * [Serial Old 垃圾收集器](#serial-old-垃圾收集器)
   * [Parallel Old 垃圾收集器](#parallel-old-垃圾收集器)
