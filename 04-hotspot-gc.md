@@ -20,7 +20,7 @@ HotSpot 虚拟机提供了多种垃圾收集器，每种收集器都有各自的
 
 一般客户端应用所需内存较小，不会创建太多对象，而且堆内存不大，因此垃圾收集器回收时间短，即使在在这段时间停止一切用户线程，也不会感觉明显卡顿。因此本垃圾收集器适合客户端使用。
 
-由于 Serial收集器只使用一条 GC 线程，避免了线程切换的开销，从而简单高效。
+由于 Serial 收集器只使用一条 GC 线程，避免了线程切换的开销，从而简单高效。
 ![Serial垃圾收集器](https://camo.githubusercontent.com/d37f1ad8005ea7bfef67eb670c5713136c97b27d/687474703a2f2f696d61676573323031352e636e626c6f67732e636f6d2f626c6f672f3333313432352f3230313630362f3333313432352d32303136303632343137343233393731392d313132373430393332322e706e67)
 ### ParNew 垃圾收集器
 ParNew 是 Serial 的多线程版本。由多条 GC 线程并行地进行垃圾清理。但清理过程依然需要Stop The World。
@@ -40,7 +40,7 @@ Parallel Scavenge 和 ParNew 一样，都是多线程、新生代垃圾收集器
 追求高吞吐量，可以通过减少 GC 执行实际工作的时间，然而，仅仅偶尔运行 GC 意味着每当 GC 运行时将有许多工作要做，因为在此期间积累在堆中的对象数量很高。单个 GC 需要花更多的时间来完成，从而导致更高的暂停时间。。
 而考虑到低暂停时间，最好频繁运行 GC 以便更快速完成，反过来又导致吞吐量下降。
 
-- 通过参数 -XX:GCTimeRadio 设置垃圾回收时间占总CPU时间的百分比。
+- 通过参数 -XX:GCTimeRadio 设置垃圾回收时间占总 CPU 时间的百分比。
 - 通过参数 -XX:MaxGCPauseMillis 设置垃圾处理过程最久停顿时间。
 - 通过命令 -XX:+UseAdaptiveSizePolicy 开启自适应策略。我们只要设置好堆的大小和 MaxGCPauseMillis 或 GCTimeRadio，收集器会自动调整新生代的大小、Eden 和 Survivor 的比例、对象进入老年代的年龄，以最大程度上接近我们设置的 MaxGCPauseMillis 或 GCTimeRadio。
 
@@ -52,7 +52,7 @@ Serial Old 收集器是 Serial 的老年代版本，都是单线程收集器，�
 Parallel Old 收集器是 Parallel Scavenge 的老年代版本，追求 CPU 吞吐量。
 
 ### CMS 垃圾收集器
-CMS(Concurrent Mark Sweep)收集器是一款追求停顿时间的老年代收集器，它在垃圾收集时使得用户线程和 GC 线程并发执行，因此在垃圾收集过程中用户也不会感到明显的卡顿。
+CMS(Concurrent Mark Sweep，并发标记清除)收集器是一款追求停顿时间的老年代收集器，它在垃圾收集时使得用户线程和 GC 线程并发执行，因此在垃圾收集过程中用户也不会感到明显的卡顿。
 
 - 初始标记：Stop The World，仅使用一条初始标记线程对所有与 GC Roots 直接关联的对象进行标记。
 - 并发标记：使用**多条**标记线程，与用户线程并发执行。此过程进行可达性分析，标记出所有废弃对象。速度很慢。
@@ -68,7 +68,7 @@ CMS 的缺点：
 - 使用“标记-清除”算法产生碎片空间
 
 对于产生碎片空间的问题，可以通过开启-XX:+UseCMSCompactAtFullCollection，在每次 Full GC 完成后都会进行一次内存压缩整理，将零散在各处的对象整理到一块。设置参数
--XX:CMSFullGCsBeforeCompaction告诉CMS，经过了 N 次 Full GC 之后再进行一次内存整理。
+-XX:CMSFullGCsBeforeCompaction告诉 CMS，经过了 N 次 Full GC 之后再进行一次内存整理。
 
 ## G1 通用垃圾收集器
 G1 垃圾收集器没有新生代和老年代的概念，而是将堆划分为一块块独立的 Region。当要进行垃圾收集时，首先估计每个 Region 中垃圾的数量，每次都从垃圾回收价值最大的 Region 开始回收，因此可以获得最大的回收效率。
