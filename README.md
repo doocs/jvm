@@ -11,5 +11,10 @@
 - [JVM 性能调优](https://github.com/yanglbme/jvm/blob/master/06-jvm-performance-tuning.md)
 - [类文件结构](https://github.com/yanglbme/jvm/blob/master/07-class-structure.md)
 
+## 写作规范
+参考《[中文技术文档的写作规范](https://github.com/ruanyf/document-style-guide)》
+
 ## License
 [Public Domain](https://baike.baidu.com/item/%E5%85%AC%E6%9C%89%E9%A2%86%E5%9F%9F/9890908?fr=aladdin&fromid=10349925&fromtitle=Public+Domain)
+
+
