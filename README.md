@@ -12,6 +12,7 @@
 - [类文件结构](https://github.com/yanglbme/jvm/blob/master/07-class-structure.md)
 - [类加载的时机](https://github.com/yanglbme/jvm/blob/master/08-load-class-time.md)
 - [类加载的过程](https://github.com/yanglbme/jvm/blob/master/09-load-class-process.md)
+- [类加载器](https://github.com/yanglbme/jvm/blob/master/10-class-loader.md)
 
 ## 写作规范
 参考《[中文技术文档的写作规范](https://github.com/ruanyf/document-style-guide)》
