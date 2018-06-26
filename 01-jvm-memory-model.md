@@ -34,6 +34,8 @@ Java 虚拟机的内存空间分为 5 个部分：
 - 堆
 - 方法区
 
+![jvm-memory-model](http://p9ucdlghd.bkt.clouddn.com/jvm-memory-model.jpg)
+
 ## 程序计数器（PC 寄存器）
 ### 程序计数器的定义
 程序计数器是一块较小的内存空间，是当前线程正在执行的那条字节码指令的地址。若当前线程正在执行的是一个本地方法，那么此时程序计数器为`Undefined`。
@@ -59,6 +61,8 @@ Java 虚拟机栈会为每一个即将运行的 Java 方法创建一块叫做“
 - 动态链接
 - 方法出口信息
 - ......
+
+![jvm-stack](http://p9ucdlghd.bkt.clouddn.com/jvm-stack.jpg)
 
 ### 压栈出栈过程
 当方法运行过程中需要创建局部变量时，就将局部变量的值存入栈帧中的局部变量表中。
