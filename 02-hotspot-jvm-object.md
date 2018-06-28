@@ -1,19 +1,5 @@
 # HotSpot 虚拟机对象探秘
 
-**目录**
-
-* [对象的内存模型](02-hotspot-jvm-object.md#对象的内存模型)
-  * [对象头](02-hotspot-jvm-object.md#对象头)
-  * [实例数据](02-hotspot-jvm-object.md#实例数据)
-  * [对齐补充](02-hotspot-jvm-object.md#对齐补充)
-* [对象的创建过程](02-hotspot-jvm-object.md#对象的创建过程)
-  * [类加载检查](02-hotspot-jvm-object.md#类加载检查)
-  * [为新生对象分配内存](02-hotspot-jvm-object.md#为新生对象分配内存)
-  * [初始化](02-hotspot-jvm-object.md#初始化)
-* [对象的访问方式](02-hotspot-jvm-object.md#对象的访问方式)
-  * [句柄访问方式](02-hotspot-jvm-object.md#句柄访问方式)
-  * [直接指针访问方式](02-hotspot-jvm-object.md#直接指针访问方式)
-
 ## 对象的内存模型
 
 在 HotSpot 虚拟机中，对象在内存中存储的布局分为 3 块区域：

@@ -1,16 +1,6 @@
 # JVM 性能调优
 
-**目录**
-
-* [使用 64 位 JDK 管理大内存](06-jvm-performance-tuning.md#使用-64-位-jdk-管理大内存)
-* [使用 32 位 JVM 建立逻辑集群](06-jvm-performance-tuning.md#使用-32-位-jvm-建立逻辑集群)
-* [调优案例分析与实战](06-jvm-performance-tuning.md#调优案例分析与实战)
-  * [场景描述](06-jvm-performance-tuning.md#场景描述)
-  * [分析](06-jvm-performance-tuning.md#分析)
-  * [直接内存的回收过程](06-jvm-performance-tuning.md#直接内存的回收过程)
-
 在高性能硬件上部署程序，目前主要有两种方式：  
-
 
 * 通过 64 位 JDK 来使用大内存；
 * 使用若干个 32 位虚拟机建立逻辑集群来利用硬件资源。

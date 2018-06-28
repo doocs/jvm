@@ -1,22 +1,8 @@
 # 类文件结构
 
-**目录**
-
-* [JVM 的“无关性”](07-class-structure.md#jvm-的无关性)
-* [Class 文件结构](07-class-structure.md#class-文件结构)
-  * [魔数](07-class-structure.md#魔数)
-  * [版本信息](07-class-structure.md#版本信息)
-  * [常量池](07-class-structure.md#常量池)
-  * [访问标志](07-class-structure.md#访问标志)
-  * [类索引、父类索引、接口索引集合](07-class-structure.md#类索引父类索引接口索引集合)
-  * [字段表集合](07-class-structure.md#字段表集合)
-  * [方法表集合](07-class-structure.md#方法表集合)
-  * [属性表集合](07-class-structure.md#属性表集合)
-
 ## JVM 的“无关性”
 
 谈论 JVM 的无关性，主要有以下两个：  
-
 
 * 平台无关性：任何操作系统都能运行 Java 代码
 * 语言无关性： JVM 能运行除 Java 以外的其他代码

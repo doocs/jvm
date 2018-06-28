@@ -1,18 +1,5 @@
 # 类加载的过程
 
-**目录**
-
-* [加载](09-load-class-process.md#加载)
-  * [加载的过程](09-load-class-process.md#加载的过程)
-  * [“非数组类”与“数组类”加载比较](09-load-class-process.md#非数组类与数组类加载比较)
-  * [注意事项](09-load-class-process.md#注意事项)
-* [验证](09-load-class-process.md#验证)
-  * [验证的重要性](09-load-class-process.md#验证的重要性)
-  * [验证的过程](09-load-class-process.md#验证的过程)
-* [准备](09-load-class-process.md#准备)
-* [解析](09-load-class-process.md#解析)
-* [初始化](09-load-class-process.md#初始化)
-
 类加载过程包括 5 个阶段：加载、验证、准备、解析和初始化。
 
 ## 加载

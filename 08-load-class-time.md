@@ -1,15 +1,5 @@
 # 类加载的时机
 
-**目录**
-
-* [类的生命周期](08-load-class-time.md#类的生命周期)
-* [类加载过程中“初始化”开始的时机](08-load-class-time.md#类加载过程中初始化开始的时机)
-* [被动引用演示 Demo](08-load-class-time.md#被动引用演示-demo)
-  * [Demo1](08-load-class-time.md#demo1)
-  * [Demo2](08-load-class-time.md#demo2)
-  * [Demo3](08-load-class-time.md#demo3)
-* [接口的加载过程](08-load-class-time.md#接口的加载过程)
-
 ## 类的生命周期
 
 类从被加载到虚拟机内存开始，到卸载出内存为止，它的整个生命周期包括以下 7 个阶段：

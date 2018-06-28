@@ -1,29 +1,5 @@
 # JVM 内存模型
 
-**目录**
-
-* [程序计数器（PC 寄存器）](01-jvm-memory-model.md#程序计数器pc-寄存器)
-  * [程序计数器的定义](01-jvm-memory-model.md#程序计数器的定义)
-  * [程序计数器的作用](01-jvm-memory-model.md#程序计数器的作用)
-  * [程序计数器的特点](01-jvm-memory-model.md#程序计数器的特点)
-* [Java 虚拟机栈（Java 栈）](01-jvm-memory-model.md#java-虚拟机栈java-栈)
-  * [Java 虚拟机栈的定义](01-jvm-memory-model.md#java-虚拟机栈的定义)
-  * [压栈出栈过程](01-jvm-memory-model.md#压栈出栈过程)
-  * [Java 虚拟机栈的特点](01-jvm-memory-model.md#java-虚拟机栈的特点)
-* [本地方法栈（C 栈）](01-jvm-memory-model.md#本地方法栈c-栈)
-  * [本地方法栈的定义](01-jvm-memory-model.md#本地方法栈的定义)
-  * [栈帧变化过程](01-jvm-memory-model.md#栈帧变化过程)
-* [堆](01-jvm-memory-model.md#堆)
-  * [堆的定义](01-jvm-memory-model.md#堆的定义)
-  * [堆的特点](01-jvm-memory-model.md#堆的特点)
-* [方法区](01-jvm-memory-model.md#方法区)
-  * [方法区的定义](01-jvm-memory-model.md#方法区的定义)
-  * [方法区的特点](01-jvm-memory-model.md#方法区的特点)
-* [运行时常量池](01-jvm-memory-model.md#运行时常量池)
-* [直接内存](01-jvm-memory-model.md#直接内存堆外内存)
-  * [操作直接内存](01-jvm-memory-model.md#操作直接内存)
-  * [直接内存与堆内存比较](01-jvm-memory-model.md#直接内存与堆内存比较)
-
 Java 虚拟机的内存空间分为 5 个部分：
 
 * 程序计数器

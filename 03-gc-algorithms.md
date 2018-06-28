@@ -1,27 +1,5 @@
 # 垃圾收集策略与算法
 
-**目录**
-
-* [判定对象是否存活](03-gc-algorithms.md#判定对象是否存活)
-  * [引用计数法](03-gc-algorithms.md#引用计数法)
-  * [可达性分析法](03-gc-algorithms.md#可达性分析法)
-* [引用的种类](03-gc-algorithms.md#引用的种类)
-  * [强引用（Strong Reference）](03-gc-algorithms.md#强引用strong-reference)
-  * [软引用（Soft Reference）](03-gc-algorithms.md#软引用soft-reference)
-  * [弱引用（Weak Reference）](03-gc-algorithms.md#弱引用weak-reference)
-  * [虚引用（Phantom Reference）](03-gc-algorithms.md#虚引用phantom-reference)
-* [回收堆中无效对象](03-gc-algorithms.md#回收堆中无效对象)
-  * [判定 finalize\(\) 是否有必要执行](03-gc-algorithms.md#判定finalize-是否有必要执行)
-  * [对象重生或死亡](03-gc-algorithms.md#对象重生或死亡)
-* [回收方法区内存](03-gc-algorithms.md#回收方法区内存)
-  * [判定废弃常量](03-gc-algorithms.md#判定废弃常量)
-  * [判定无用的类](03-gc-algorithms.md#判定无用的类)
-* [垃圾收集算法](03-gc-algorithms.md#垃圾收集算法)
-  * [标记-清除算法](03-gc-algorithms.md#标记-清除算法)
-  * [复制算法（新生代）](03-gc-algorithms.md#复制算法新生代)
-  * [标记-整理算法（老年代）](03-gc-algorithms.md#标记-整理算法老年代)
-  * [分代收集算法](03-gc-algorithms.md#分代收集算法)
-
 程序计数器、虚拟机栈、本地方法栈随线程而生，也随线程而灭；栈帧随着方法的开始而入栈，随着方法的结束而出栈。这几个区域的内存分配和回收都具有确定性，在这几个区域内不需要过多考虑回收的问题，因为方法结束或者线程结束时，内存自然就跟随着回收了。
 
 而对于 Java 堆和方法区，我们只有在程序运行期间才能知道会创建哪些对象，这部分内存的分配和回收都是动态的，垃圾收集器所关注的正是这部分内存。

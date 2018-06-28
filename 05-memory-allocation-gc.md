@@ -1,15 +1,6 @@
 # 内存分配与回收策略
 
-**目录**
-
-* [对象优先在 Eden 分配](05-memory-allocation-gc.md#对象优先在-eden-分配)
-* [大对象直接进入老年代](05-memory-allocation-gc.md#大对象直接进入老年代)
-* [长期存活的对象将进入老年代](05-memory-allocation-gc.md#长期存活的对象将进入老年代)
-* [动态对象年龄判定](05-memory-allocation-gc.md#动态对象年龄判定)
-* [空间分配担保](05-memory-allocation-gc.md#空间分配担保)
-
 ## 对象优先在 Eden 分配
-
 大多数情况下，对象在新生代 Eden 区中分配。当 Eden 区没有足够空间进行分配时，虚拟机将发起一次 Minor GC。
 
 * Minor GC：指发生在新生代的垃圾收集动作，因为 Java 对象大多都具备朝生夕灭的特性，所以 Minor GC 非常频繁，一般回收速度也比较快。
