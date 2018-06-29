@@ -4,16 +4,16 @@
 
 ## 清单
 
-* [JVM 内存模型](https://github.com/yanglbme/jvm/blob/master/01-jvm-memory-model.md)
-* [HotSpot 虚拟机对象探秘](https://github.com/yanglbme/jvm/blob/master/02-hotspot-jvm-object.md)
-* [垃圾收集策略与算法](https://github.com/yanglbme/jvm/blob/master/03-gc-algorithms.md)
-* [HotSpot 垃圾收集器](https://github.com/yanglbme/jvm/blob/master/04-hotspot-gc.md)
-* [内存分配与回收策略](https://github.com/yanglbme/jvm/blob/master/05-memory-allocation-gc.md)
-* [JVM 性能调优](https://github.com/yanglbme/jvm/blob/master/06-jvm-performance-tuning.md)
-* [类文件结构](https://github.com/yanglbme/jvm/blob/master/07-class-structure.md)
-* [类加载的时机](https://github.com/yanglbme/jvm/blob/master/08-load-class-time.md)
-* [类加载的过程](https://github.com/yanglbme/jvm/blob/master/09-load-class-process.md)
-* [类加载器](https://github.com/yanglbme/jvm/blob/master/10-class-loader.md)
+* [JVM 内存模型](https://github.com/yanglbme/jvm/blob/master/docs/01-jvm-memory-model.md)
+* [HotSpot 虚拟机对象探秘](https://github.com/yanglbme/jvm/blob/master/docs/02-hotspot-jvm-object.md)
+* [垃圾收集策略与算法](https://github.com/yanglbme/jvm/blob/master/docs/03-gc-algorithms.md)
+* [HotSpot 垃圾收集器](https://github.com/yanglbme/jvm/blob/master/docs/04-hotspot-gc.md)
+* [内存分配与回收策略](https://github.com/yanglbme/jvm/blob/master/docs/05-memory-allocation-gc.md)
+* [JVM 性能调优](https://github.com/yanglbme/jvm/blob/master/docs/06-jvm-performance-tuning.md)
+* [类文件结构](https://github.com/yanglbme/jvm/blob/master/docs/07-class-structure.md)
+* [类加载的时机](https://github.com/yanglbme/jvm/blob/master/docs/08-load-class-time.md)
+* [类加载的过程](https://github.com/yanglbme/jvm/blob/master/docs/09-load-class-process.md)
+* [类加载器](https://github.com/yanglbme/jvm/blob/master/docs/10-class-loader.md)
 
 ## 写作规范
 
