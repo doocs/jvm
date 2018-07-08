@@ -8,6 +8,8 @@
 * 实例数据（Instance Data）
 * 对齐填充（Padding）
 
+![object-memory-layout.png](http://p9ucdlghd.bkt.clouddn.com/object-memory-layout.png)
+
 ### 对象头
 
 对象头记录了对象在运行过程中所需要使用的一些数据：
