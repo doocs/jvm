@@ -2,7 +2,7 @@
 这里仅仅记录了一些笔者认为需要重点掌握的 JVM 知识点，如果你想更加全面地了解 JVM 底层原理，可以阅读周志明老师《[深入理解Java虚拟机——JVM高级特性与最佳实践(第2版)](http://paver62xl.bkt.clouddn.com/深入理解Java虚拟机——JVM高级特性与最佳实践%28第2版%29.pdf)》全书。
 
 ## 清单
-* [JVM 内存模型](/docs/01-jvm-memory-structure.md)
+* [JVM 内存结构](/docs/01-jvm-memory-structure.md)
 * [HotSpot 虚拟机对象探秘](/docs/02-hotspot-jvm-object.md)
 * [垃圾收集策略与算法](/docs/03-gc-algorithms.md)
 * [HotSpot 垃圾收集器](/docs/04-hotspot-gc.md)
