@@ -60,4 +60,4 @@ promotion failed，就是上文所说的担保失败，而 concurrent mode failu
 
 5. 统计得到的Minor GC晋升到旧生代的平均大小大于老年代的剩余空间
 
-
+（完）

@@ -120,3 +120,4 @@ public static void main(String[] args) {
 
 虚拟机会保证一个类的 &lt;clinit&gt;\(\) 方法在多线程环境中被正确加锁、同步。如果多个线程同时去初始化一个类，那么只会有一个线程去执行这个类的 &lt;clinit&gt;\(\) 方法。
 
+（完）
