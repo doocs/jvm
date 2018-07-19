@@ -145,6 +145,6 @@ Java 虚拟机规范中定义方法区是堆的一个逻辑部分。方法区存
 
 （完）
 ---
-👉 [Previous](../README.md)
-👉 [Next](/02-hotspot-jvm-object.md)
+👉 [Previous](../README.md)<br>
+👉 [Next](/docs/02-hotspot-jvm-object.md)<br>
 👉 [Back to README](../README.md)

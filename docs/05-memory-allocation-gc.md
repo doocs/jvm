@@ -62,6 +62,6 @@ promotion failed，就是上文所说的担保失败，而 concurrent mode failu
 
 （完）
 ---
-👉 [Previous](/04-hotspot-gc.md)
-👉 [Next](/06-jvm-performance-tuning.md)
+👉 [Previous](/docs/04-hotspot-gc.md)<br>
+👉 [Next](/docs/06-jvm-performance-tuning.md)<br>
 👉 [Back to README](../README.md)

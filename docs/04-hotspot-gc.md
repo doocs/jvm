@@ -86,6 +86,6 @@ G1 是一款面向服务端应用的垃圾收集器，它没有新生代和老�
 
 （完）
 ---
-👉 [Previous](/03-gc-algorithms.md)
-👉 [Next](/05-memory-allocation-gc.md)
+👉 [Previous](/docs/03-gc-algorithms.md)<br>
+👉 [Next](/docs/05-memory-allocation-gc.md)<br>
 👉 [Back to README](../README.md)

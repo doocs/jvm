@@ -50,6 +50,6 @@
 
 （完）
 ---
-👉 [Previous](/05-memory-allocation-gc.md)
-👉 [Next](/07-class-structure.md)
+👉 [Previous](/docs/05-memory-allocation-gc.md)<br>
+👉 [Next](/docs/07-class-structure.md)<br>
 👉 [Back to README](../README.md)

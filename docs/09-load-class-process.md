@@ -122,6 +122,6 @@ public static void main(String[] args) {
 
 （完）
 ---
-👉 [Previous](/08-load-class-time.md)
-👉 [Next](/10-class-loader.md)
+👉 [Previous](/docs/08-load-class-time.md)<br>
+👉 [Next](/docs/10-class-loader.md)<br>
 👉 [Back to README](../README.md)

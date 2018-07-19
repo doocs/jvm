@@ -131,6 +131,6 @@ JVM 会判断此对象是否有必要执行 finalize() 方法，如果对象没�
 
 （完）
 ---
-👉 [Previous](/02-hotspot-jvm-object.md)
-👉 [Next](/04-hotspot-gc.md)
+👉 [Previous](/docs/02-hotspot-jvm-object.md)<br>
+👉 [Next](/docs/04-hotspot-gc.md)<br>
 👉 [Back to README](../README.md)

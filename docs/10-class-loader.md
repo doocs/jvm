@@ -43,6 +43,6 @@
 （完）
 
 ---
-👉 [Previous](/09-load-class-process)
-👉 [Next](../README.md)
+👉 [Previous](/docs/09-load-class-process)<br>
+👉 [Next](../README.md)<br>
 👉 [Back to README](../README.md)

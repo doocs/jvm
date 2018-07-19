@@ -128,6 +128,6 @@ public class NotInitialization {
 
 （完）
 ---
-👉 [Previous](/07-class-structure.md)
-👉 [Next](/09-load-class-process.md)
+👉 [Previous](/docs/07-class-structure.md)<br>
+👉 [Next](/docs/09-load-class-process.md)<br>
 👉 [Back to README](../README.md)

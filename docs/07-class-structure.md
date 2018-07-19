@@ -140,6 +140,6 @@ volatile 关键字 和 transient 关键字不能修饰方法，所以方法表�
 
 （完）
 ---
-👉 [Previous](/06-jvm-performance-tuning.md)
-👉 [Next](/08-load-class-time.md)
+👉 [Previous](/docs/06-jvm-performance-tuning.md)<br>
+👉 [Next](/docs/08-load-class-time.md)<br>
 👉 [Back to README](../README.md)

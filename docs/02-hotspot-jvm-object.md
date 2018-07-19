@@ -79,6 +79,6 @@ HotSpot VM 的自动内存管理系统要求对象的大小必须是 8 字节的
 
 （完）
 ---
-👉 [Previous](/01-jvm-memory-structure.md)
-👉 [Next](/03-gc-algorithms.md)
+👉 [Previous](/docs/01-jvm-memory-structure.md)<br>
+👉 [Next](/docs/03-gc-algorithms.md)<br>
 👉 [Back to README](../README.md)
