@@ -130,3 +130,7 @@ JVM 会判断此对象是否有必要执行 finalize() 方法，如果对象没�
 * 老年代：标记-清除算法、标记-整理算法
 
 （完）
+---
+👉 [Previous](/02-hotspot-jvm-object.md)
+👉 [Next](/04-hotspot-gc.md)
+👉 [Back to README](../README.md)

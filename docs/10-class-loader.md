@@ -41,3 +41,8 @@
 相反，如果没有使用双亲委派模型，由各个类加载器自行去加载的话，如果用户自己编写了一个称为 java.lang.Object 的类，并放在 classpath 下，那么系统将会出现多个不同的 Object 类，Java 类型体系中最基础的行为也就无法保证。
 
 （完）
+
+---
+👉 [Previous](/09-load-class-process)
+👉 [Next](../README.md)
+👉 [Back to README](../README.md)

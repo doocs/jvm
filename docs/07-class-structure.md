@@ -139,3 +139,7 @@ volatile 关键字 和 transient 关键字不能修饰方法，所以方法表�
 | u1 | info | attribute\_length |
 
 （完）
+---
+👉 [Previous](/06-jvm-performance-tuning.md)
+👉 [Next](/08-load-class-time.md)
+👉 [Back to README](../README.md)

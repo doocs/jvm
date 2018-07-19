@@ -127,3 +127,7 @@ public class NotInitialization {
 当一个类在初始化时，要求其父类全部都已经初始化过了，但是一个接口在初始化时，并不要求其父接口全部都完成了初始化，当真正用到父接口的时候才会初始化。
 
 （完）
+---
+👉 [Previous](/07-class-structure.md)
+👉 [Next](/09-load-class-process.md)
+👉 [Back to README](../README.md)

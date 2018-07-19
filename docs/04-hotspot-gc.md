@@ -85,3 +85,7 @@ G1 是一款面向服务端应用的垃圾收集器，它没有新生代和老�
 * 筛选回收：回收废弃对象，此时也要 Stop The World，并使用多条筛选回收线程并发执行。
 
 （完）
+---
+👉 [Previous](/03-gc-algorithms.md)
+👉 [Next](/05-memory-allocation-gc.md)
+👉 [Back to README](../README.md)

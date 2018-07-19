@@ -144,3 +144,7 @@ Java 虚拟机规范中定义方法区是堆的一个逻辑部分。方法区存
 > 服务器管理员在配置虚拟机参数时，会根据实际内存设置`-Xmx`等参数信息，但经常忽略直接内存，使得各个内存区域总和大于物理内存限制，从而导致动态扩展时出现`OutOfMemoryError`异常。
 
 （完）
+---
+👉 [Previous](../README.md)
+👉 [Next](/02-hotspot-jvm-object.md)
+👉 [Back to README](../README.md)
