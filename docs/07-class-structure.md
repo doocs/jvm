@@ -67,11 +67,22 @@ Class 文件的魔数是用 16 进制表示的“CAFE BABE”，是不是很具�
 
 #### 常量池中常量类型
 
-| 类型 | tag | 描述 |
-| --- | --- | --- |
-| CONSTANT\_utf8\_info | 1 | UTF-8编码的字符串 |
-
-CONSTANT\_Integer\_info \| 3 \| 整型字面量 CONSTANT\_Float\_info \| 4 \| 浮点型字面量 CONSTANT\_Long\_info \|5 \| 长整型字面量 CONSTANT\_Double\_info \| 6 \| 双精度浮点型字面量 CONSTANT\_Class\_info \| 7 \| 类或接口的符号引用 CONSTANT\_String\_info \| 8 \| 字符串类型字面量 CONSTANT\_Fieldref\_info \| 9 \| 字段的符号引用 CONSTANT\_Methodref\_info \| 10 \| 类中方法的符号引用 CONSTANT\_InterfaceMethodref\_info \| 11 \| 接口中方法的符号引用 CONSTANT\_NameAndType\_info \| 12 \| 字段或方法的符号引用 CONSTANT\_MethodHandle\_info \| 15 \| 表示方法句柄 CONSTANT\_MethodType\_info \| 16 \| 标识方法类型 CONSTANT\_InvokeDynamic\_info \| 18 \| 表示一个动态方法调用点
+| 类型    | tag   | 描述　|
+|---|---|---|
+| CONSTANT_utf8_info | 1 | UTF-8编码的字符串 |
+| CONSTANT_Integer_info | 3 | 整型字面量 |
+| CONSTANT_Float_info | 4 | 浮点型字面量 |
+| CONSTANT_Long_info  |5 | 长整型字面量 |
+| CONSTANT_Double_info | 6 |  双精度浮点型字面量 |
+| CONSTANT_Class_info | 7 |   类或接口的符号引用 |
+| CONSTANT_String_info    | 8 |   字符串类型字面量 |
+| CONSTANT_Fieldref_info  | 9 |   字段的符号引用 |
+| CONSTANT_Methodref_info | 10 |  类中方法的符号引用 |
+| CONSTANT_InterfaceMethodref_info    | 11 |  接口中方法的符号引用 |
+| CONSTANT_NameAndType_info | 12 |    字段或方法的符号引用 |
+| CONSTANT_MethodHandle_info  | 15 |  表示方法句柄 |
+| CONSTANT_MethodType_info    | 16 |  标识方法类型 |
+| CONSTANT_InvokeDynamic_info | 18 |  表示一个动态方法调用点 |
 
 对于 CONSTANT\_Class\_info（此类型的常量代表一个类或者接口的符号引用），它的二维表结构如下：
 
