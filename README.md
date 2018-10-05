@@ -1,4 +1,10 @@
 # 深入理解 Java 虚拟机
+
+<p>
+  <a href="http://makeapullrequest.com"><img src="https://img.shields.io/badge/PRs-Welcome-brightgreen.svg" alt="PRs Welcome"></a>
+</p>
+
+
 这里仅仅记录了一些笔者认为需要重点掌握的 JVM 知识点，如果你想更加全面地了解 JVM 底层原理，可以阅读周志明老师《[深入理解Java虚拟机——JVM高级特性与最佳实践(第2版)](http://paver62xl.bkt.clouddn.com/深入理解Java虚拟机——JVM高级特性与最佳实践%28第2版%29.pdf)》全书。
 
 ## 清单
