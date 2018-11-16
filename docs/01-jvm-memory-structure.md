@@ -8,7 +8,7 @@ Java 虚拟机的内存空间分为 5 个部分：
 * 堆
 * 方法区
 
-![jvm-memory-structure](http://p9ucdlghd.bkt.clouddn.com/jvm-memory-structure.jpg)
+![jvm-memory-structure](/img/jvm-memory-structure.jpg)
 
 JDK 1.8 同 JDK 1.7 比，最大的差别就是：元数据区取代了永久代。元空间的本质和永久代类似，都是对 JVM 规范中方法区的实现。不过元空间与永久代之间最大的区别在于：元数据空间并不在虚拟机中，而是使用本地内存。
 
@@ -44,7 +44,7 @@ Java 虚拟机栈会为每一个即将运行的 Java 方法创建一块叫做“
 * 方法出口信息
 * ......
 
-![jvm-stack](http://p9ucdlghd.bkt.clouddn.com/jvm-stack.jpg)
+![jvm-stack](/img/jvm-stack.jpg)
 
 ### 压栈出栈过程
 
