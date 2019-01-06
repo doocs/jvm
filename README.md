@@ -1,9 +1,9 @@
 # 深入理解 Java 虚拟机
 
-<p>
-  <a href="http://makeapullrequest.com"><img src="https://img.shields.io/badge/PRs-Welcome-brightgreen.svg" alt="PRs Welcome"></a>
-</p>
-
+[![stars](https://img.shields.io/github/stars/doocs/jvm.svg)](https://github.com/doocs/jvm/stargazers)
+[![forks](https://img.shields.io/github/forks/doocs/jvm.svg)](https://github.com/doocs/jvm/network/members)
+[![issues](https://img.shields.io/github/issues/doocs/jvm.svg)](https://github.com/doocs/jvm/issues)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com)
 
 这里仅仅记录了一些笔者认为需要重点掌握的 JVM 知识点，如果你想更加全面地了解 JVM 底层原理，可以阅读周志明老师《[深入理解Java虚拟机——JVM高级特性与最佳实践(第2版)](/book/jvm.pdf)》全书。
 
@@ -20,13 +20,10 @@
 * [类加载器](/docs/10-class-loader.md)
 
 ## 写作规范
-参考《[中文技术文档的写作规范](https://github.com/ruanyf/document-style-guide)》
-
-## Electronic book
-The docs has been already made into an E-book, click [here](https://yanglbme.gitbook.io/jvm) to read.
+参考《[中文技术文档的写作规范](https://github.com/ruanyf/document-style-guide)》。
 
 ## Contributions
 Contributions are welcome, but there are no guarantees that they are accepted as such.
 
 ## License
-[Public Domain](https://baike.baidu.com/item/公有领域/9890908?fr=aladdin&fromid=10349925&fromtitle=Public+Domain)
+[Public Domain](https://baike.baidu.com/item/公有领域/9890908?fr=aladdin&fromid=10349925&fromtitle=Public+Domain).
