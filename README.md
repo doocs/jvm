@@ -2,7 +2,7 @@
 <a href="https://github.com/doocs/jvm/blob/master/LICENSE"><img src="https://badgen.net/github/license/doocs/jvm?color=green" alt="license"></a>
 <a href="https://github.com/doocs/jvm/issues"><img src="https://badgen.net/github/open-issues/doocs/jvm" alt="issues"></a>
 <a href="https://github.com/doocs/jvm/stargazers"><img src="https://badgen.net/github/stars/doocs/jvm" alt="stars"></a>
-<a href="https://github.com/doocs/jvm/network/members"><a href="https://opencollective.com/doocs-jvm" alt="Financial Contributors on Open Collective"><img src="https://opencollective.com/doocs-jvm/all/badge.svg?label=financial+contributors" /></a> <img src="https://img.shields.io/github/forks/doocs/jvm.svg" alt="forks"></a>
+<a href="https://opencollective.com/doocs-jvm" alt="Financial Contributors on Open Collective"><img src="https://opencollective.com/doocs-jvm/all/badge.svg?label=financial+contributors" /></a>
 <a href="http://makeapullrequest.com"><img src="https://badgen.net/badge/PRs/welcome/cyan" alt="PRs Welcome"></a>
 <a href="https://github.com/doocs/intro"><img src="https://badgen.net/badge/organization/join%20us/cyan" alt="open-source-organization"></a>
 
@@ -27,35 +27,9 @@
 ## Contributions
 Contributions are welcome, but there are no guarantees that they are accepted as such.
 
-## Contributors
+This project exists thanks to all the people who contribute. 
 
-### Code Contributors
-
-This project exists thanks to all the people who contribute. [[Contribute](CONTRIBUTING.md)].
 <a href="https://github.com/doocs/jvm/graphs/contributors"><img src="https://opencollective.com/doocs-jvm/contributors.svg?width=890&button=false" /></a>
-
-### Financial Contributors
-
-Become a financial contributor and help us sustain our community. [[Contribute](https://opencollective.com/doocs-jvm/contribute)]
-
-#### Individuals
-
-<a href="https://opencollective.com/doocs-jvm"><img src="https://opencollective.com/doocs-jvm/individuals.svg?width=890"></a>
-
-#### Organizations
-
-Support this project with your organization. Your logo will show up here with a link to your website. [[Contribute](https://opencollective.com/doocs-jvm/contribute)]
-
-<a href="https://opencollective.com/doocs-jvm/organization/0/website"><img src="https://opencollective.com/doocs-jvm/organization/0/avatar.svg"></a>
-<a href="https://opencollective.com/doocs-jvm/organization/1/website"><img src="https://opencollective.com/doocs-jvm/organization/1/avatar.svg"></a>
-<a href="https://opencollective.com/doocs-jvm/organization/2/website"><img src="https://opencollective.com/doocs-jvm/organization/2/avatar.svg"></a>
-<a href="https://opencollective.com/doocs-jvm/organization/3/website"><img src="https://opencollective.com/doocs-jvm/organization/3/avatar.svg"></a>
-<a href="https://opencollective.com/doocs-jvm/organization/4/website"><img src="https://opencollective.com/doocs-jvm/organization/4/avatar.svg"></a>
-<a href="https://opencollective.com/doocs-jvm/organization/5/website"><img src="https://opencollective.com/doocs-jvm/organization/5/avatar.svg"></a>
-<a href="https://opencollective.com/doocs-jvm/organization/6/website"><img src="https://opencollective.com/doocs-jvm/organization/6/avatar.svg"></a>
-<a href="https://opencollective.com/doocs-jvm/organization/7/website"><img src="https://opencollective.com/doocs-jvm/organization/7/avatar.svg"></a>
-<a href="https://opencollective.com/doocs-jvm/organization/8/website"><img src="https://opencollective.com/doocs-jvm/organization/8/avatar.svg"></a>
-<a href="https://opencollective.com/doocs-jvm/organization/9/website"><img src="https://opencollective.com/doocs-jvm/organization/9/avatar.svg"></a>
 
 ## License
 <a rel="license" href="https://github.com/doocs/jvm/blob/master/LICENSE"><img alt="Creative Commons License" style="border-width:0" src="./images/cc-by-sa-88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
