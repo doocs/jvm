@@ -2,12 +2,11 @@
 <a href="https://github.com/doocs/jvm/blob/master/LICENSE"><img src="https://badgen.net/github/license/doocs/jvm?color=green" alt="license"></a>
 <a href="https://github.com/doocs/jvm/issues"><img src="https://badgen.net/github/open-issues/doocs/jvm" alt="issues"></a>
 <a href="https://github.com/doocs/jvm/stargazers"><img src="https://badgen.net/github/stars/doocs/jvm" alt="stars"></a>
-<a href="https://opencollective.com/doocs-jvm" alt="Financial Contributors on Open Collective"><img src="https://opencollective.com/doocs-jvm/all/badge.svg?label=financial+contributors" /></a>
 <a href="http://makeapullrequest.com"><img src="https://badgen.net/badge/PRs/welcome/cyan" alt="PRs Welcome"></a>
-<a href="https://github.com/doocs/intro"><img src="https://badgen.net/badge/organization/join%20us/cyan" alt="open-source-organization"></a>
+<a href="https://github.com/doocs/doocs.github.io"><img src="https://badgen.net/badge/organization/join%20us/cyan" alt="open-source-organization"></a>
 
 
-这里仅仅记录了一些笔者认为需要重点掌握的 JVM 知识点，如果你想更加全面地了解 JVM 底层原理，可以阅读周志明老师《[深入理解Java虚拟机——JVM高级特性与最佳实践(第2版)](/book/jvm.pdf)》全书。
+这里仅仅记录了一些笔者认为需要重点掌握的 JVM 知识点，如果你想更加全面地了解 JVM 底层原理，可以阅读周志明老师《[深入理解Java虚拟机——JVM高级特性与最佳实践(第2版)](https://github.com/doocs/jvm/blob/master/book/jvm.pdf)》全书。
 
 ## 清单
 * [JVM 内存结构](/docs/01-jvm-memory-structure.md)
@@ -21,15 +20,9 @@
 * [类加载的过程](/docs/09-load-class-process.md)
 * [类加载器](/docs/10-class-loader.md)
 
+## 站点
+- GitHub Pages: https://doocs.github.io/jvm
+- Gitee Pages: https://doocs.gitee.io/jvm
+
 ## 写作规范
 参考《[中文技术文档的写作规范](https://github.com/ruanyf/document-style-guide)》。
-
-## Contributions
-Contributions are welcome, but there are no guarantees that they are accepted as such.
-
-This project exists thanks to all the people who contribute. 
-
-<a href="https://github.com/doocs/jvm/graphs/contributors"><img src="https://opencollective.com/doocs-jvm/contributors.svg?width=890&button=false" /></a>
-
-## License
-<a rel="license" href="https://github.com/doocs/jvm/blob/master/LICENSE"><img alt="Creative Commons License" style="border-width:0" src="./images/cc-by-sa-88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.

@@ -14,7 +14,7 @@
 
 验证、准备、解析 3 个阶段统称为连接。
 
-![Load Class](/images/loadclass.png)
+![Load Class](./images/loadclass.png)
 
 加载、验证、准备、初始化和卸载这 5 个阶段的顺序是确定的，类的加载过程必须按照这种顺序按部就班地开始（注意是“开始”，而不是“进行”或“完成”），而解析阶段则不一定：它在某些情况下可以在初始化后再开始，这是为了支持 Java 语言的运行时绑定。
 
@@ -125,9 +125,3 @@ public class NotInitialization {
 接口加载过程与类加载过程稍有不同。
 
 当一个类在初始化时，要求其父类全部都已经初始化过了，但是一个接口在初始化时，并不要求其父接口全部都完成了初始化，当真正用到父接口的时候才会初始化。
-
-（完）
----
-👉 [Previous](/docs/07-class-structure.md)<br>
-👉 [Next](/docs/09-load-class-process.md)<br>
-👉 [Back to README](../README.md)

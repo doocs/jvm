@@ -59,9 +59,3 @@ JVM 规范中运行时数据区域中的方法区，在 HotSpot 虚拟机中也�
 promotion failed，就是上文所说的担保失败，而 concurrent mode failure 是在执行 CMS GC 的过程中同时有对象要放入老年代，而此时老年代空间不足造成的。
 
 5. 统计得到的Minor GC晋升到旧生代的平均大小大于老年代的剩余空间
-
-（完）
----
-👉 [Previous](/docs/04-hotspot-gc.md)<br>
-👉 [Next](/docs/06-jvm-performance-tuning.md)<br>
-👉 [Back to README](../README.md)

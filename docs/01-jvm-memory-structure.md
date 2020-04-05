@@ -8,7 +8,7 @@ Java 虚拟机的内存空间分为 5 个部分：
 * 堆
 * 方法区
 
-![jvm-memory-structure](/images/jvm-memory-structure.jpg)
+![jvm-memory-structure](./images/jvm-memory-structure.jpg)
 
 JDK 1.8 同 JDK 1.7 比，最大的差别就是：元数据区取代了永久代。元空间的本质和永久代类似，都是对 JVM 规范中方法区的实现。不过元空间与永久代之间最大的区别在于：元数据空间并不在虚拟机中，而是使用本地内存。
 
@@ -44,7 +44,7 @@ Java 虚拟机栈会为每一个即将运行的 Java 方法创建一块叫做“
 * 方法出口信息
 * ......
 
-![jvm-stack](/images/jvm-stack.jpg)
+![jvm-stack](./images/jvm-stack.jpg)
 
 ### 压栈出栈过程
 
@@ -142,9 +142,3 @@ Java 虚拟机规范中定义方法区是堆的一个逻辑部分。方法区存
 * 堆内存作用链：本地 IO -&gt; 直接内存 -&gt; 非直接内存 -&gt; 直接内存 -&gt; 本地 IO
 
 > 服务器管理员在配置虚拟机参数时，会根据实际内存设置`-Xmx`等参数信息，但经常忽略直接内存，使得各个内存区域总和大于物理内存限制，从而导致动态扩展时出现`OutOfMemoryError`异常。
-
-（完）
----
-👉 [Previous](../README.md)<br>
-👉 [Next](/docs/02-hotspot-jvm-object.md)<br>
-👉 [Back to README](../README.md)

@@ -119,9 +119,3 @@ public static void main(String[] args) {
 接口中不能使用静态代码块，但接口也需要通过 &lt;clinit&gt;\(\) 方法为接口中定义的静态成员变量显式初始化。但接口与类不同，接口的 &lt;clinit&gt;\(\) 方法不需要先执行父类的 &lt;clinit&gt;\(\) 方法，只有当父接口中定义的变量使用时，父接口才会初始化。
 
 虚拟机会保证一个类的 &lt;clinit&gt;\(\) 方法在多线程环境中被正确加锁、同步。如果多个线程同时去初始化一个类，那么只会有一个线程去执行这个类的 &lt;clinit&gt;\(\) 方法。
-
-（完）
----
-👉 [Previous](/docs/08-load-class-time.md)<br>
-👉 [Next](/docs/10-class-loader.md)<br>
-👉 [Back to README](../README.md)

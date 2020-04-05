@@ -18,7 +18,7 @@
 * 扩展类加载器（Extension ClassLoader）：  负责加载 `<JAVA_HOME>\lib\ext` 目录中的所有类库，开发者可以直接使用扩展类加载器。
 * 应用程序类加载器（Application ClassLoader）：  由于这个类加载器是 ClassLoader 中的 getSystemClassLoader\(\) 方法的返回值，所以一般也称它为“系统类加载器”。它负责加载用户类路径（classpath）上所指定的类库，开发者可以直接使用这个类加载器，如果应用程序中没有自定义过自己的类加载器，一般情况下这个就是程序中默认的类加载器。
 
-![ClassLoader](/images/classloader.png)
+![ClassLoader](./images/classloader.png)
 
 当然，如果有必要，还可以加入自己定义的类加载器。
 
@@ -39,10 +39,3 @@
 像 java.lang.Object 这些存放在 rt.jar 中的类，无论使用哪个类加载器加载，最终都会委派给最顶端的启动类加载器加载，从而使得不同加载器加载的 Object 类都是同一个。
 
 相反，如果没有使用双亲委派模型，由各个类加载器自行去加载的话，如果用户自己编写了一个称为 java.lang.Object 的类，并放在 classpath 下，那么系统将会出现多个不同的 Object 类，Java 类型体系中最基础的行为也就无法保证。
-
-（完）
-
----
-👉 [Previous](/docs/09-load-class-process)<br>
-👉 [Next](../README.md)<br>
-👉 [Back to README](../README.md)

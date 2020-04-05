@@ -129,9 +129,3 @@ JVM 会判断此对象是否有必要执行 finalize() 方法，如果对象没�
 
 * 新生代：复制算法
 * 老年代：标记-清除算法、标记-整理算法
-
-（完）
----
-👉 [Previous](/docs/02-hotspot-jvm-object.md)<br>
-👉 [Next](/docs/04-hotspot-gc.md)<br>
-👉 [Back to README](../README.md)
