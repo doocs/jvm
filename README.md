@@ -21,8 +21,10 @@
 * [类加载器](/docs/10-class-loader.md)
 
 ## 站点
-- GitHub Pages: https://doocs.github.io/jvm
+- Netlify: https://jvm.netlify.com
 - Gitee Pages: https://doocs.gitee.io/jvm
+- GitHub Pages: https://doocs.github.io/jvm
+
 
 ## 写作规范
 参考《[中文技术文档的写作规范](https://github.com/ruanyf/document-style-guide)》。
