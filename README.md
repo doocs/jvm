@@ -1,4 +1,5 @@
 # Java 虚拟机底层原理知识总结
+
 <a href="https://github.com/doocs/jvm/blob/master/LICENSE"><img src="https://badgen.net/github/license/doocs/jvm?color=green" alt="license"></a>
 <a href="https://github.com/doocs/jvm/issues"><img src="https://badgen.net/github/open-issues/doocs/jvm" alt="issues"></a>
 <a href="https://github.com/doocs/jvm/stargazers"><img src="https://badgen.net/github/stars/doocs/jvm" alt="stars"></a>
@@ -6,9 +7,10 @@
 <a href="https://github.com/doocs/doocs.github.io"><img src="https://badgen.net/badge/organization/join%20us/cyan" alt="open-source-organization"></a>
 
 
-这里仅仅记录了一些笔者认为需要重点掌握的 JVM 知识点，如果你想更加全面地了解 JVM 底层原理，可以阅读周志明老师《[深入理解Java虚拟机——JVM高级特性与最佳实践(第2版)](https://github.com/doocs/jvm/blob/master/book/jvm.pdf)》全书。
+这里仅仅记录了一些笔者认为需要重点掌握的 JVM 知识点，如果你想更加全面地了解 JVM 底层原理，可以阅读周志明老师《深入理解Java虚拟机——JVM高级特性与最佳实践(第2版)》全书。
 
 ## 清单
+
 * [JVM 内存结构](/docs/01-jvm-memory-structure.md)
 * [HotSpot 虚拟机对象探秘](/docs/02-hotspot-jvm-object.md)
 * [垃圾收集策略与算法](/docs/03-gc-algorithms.md)
@@ -21,12 +23,14 @@
 * [类加载器](/docs/10-class-loader.md)
 
 ## 站点
+
 - Netlify: https://jvm.netlify.com
 - Gitee Pages: https://doocs.gitee.io/jvm
 - GitHub Pages: https://doocs.github.io/jvm
 
 
 ## 写作规范
+
 参考《[中文技术文档的写作规范](https://github.com/ruanyf/document-style-guide)》。
 
 ---
@@ -54,3 +58,24 @@ Doocs 技术社区，致力于打造一个内容完整、持续成长的互联�
 <a href="https://opencollective.com/doocs/contributors.svg?width=890&button=true"><img src="https://opencollective.com/doocs/contributors.svg?width=890&button=false" /></a>
 
 <!-- ALL-CONTRIBUTORS-LIST: END -->
+
+## 公众号
+
+[Doocs](https://github.com/doocs) 技术社区旗下唯一公众号「**Doocs开源社区**」​，欢迎扫码关注，**专注分享技术领域相关知识及行业最新资讯**。当然，也可以加我个人微信（备注：GitHub），拉你进技术交流群。
+
+<table>
+    <tr>
+      <td align="center" style="width: 200px;">
+        <a href="https://github.com/doocs">
+          <img src="./images/qrcode-for-doocs.jpg" style="width: 400px;"><br>
+          <sub>公众平台</sub>
+        </a><br>
+      </td>
+      <td align="center" style="width: 200px;">
+        <a href="https://github.com/yanglbme">
+          <img src="./images/qrcode-for-yanglbme.jpg" style="width: 400px;"><br>
+          <sub>个人微信</sub>
+        </a><br>
+      </td>
+    </tr>
+</table>
