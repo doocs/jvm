@@ -1,0 +1,25 @@
+{
+  "name": "jvm",
+  "version": "1.0.0",
+  "description": "dive into jvm",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "convert": "node_modules/.bin/docsify-pdf-converter"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/doocs/jvm.git"
+  },
+  "author": "yanglbme",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/doocs/jvm/issues"
+  },
+  "homepage": "https://github.com/doocs/jvm#readme",
+  "devDependencies": {
+    "docsify-pdf-converter": "^2.0.7"
+  }
+}
