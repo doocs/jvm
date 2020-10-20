@@ -2,10 +2,10 @@
 
 ## JVM 的“无关性”
 
-谈论 JVM 的无关性，主要有以下两个：  
+谈论 JVM 的无关性，主要有以下两个：
 
-* 平台无关性：任何操作系统都能运行 Java 代码
-* 语言无关性： JVM 能运行除 Java 以外的其他代码
+- 平台无关性：任何操作系统都能运行 Java 代码
+- 语言无关性： JVM 能运行除 Java 以外的其他代码
 
 Java 源代码首先需要使用 Javac 编译器编译成 .class 文件，然后由 JVM 执行 .class 文件，从而程序开始运行。
 
@@ -17,19 +17,19 @@ JVM 只认识 .class 文件，它不关心是何种语言生成了 .class 文件
 
 Class 文件是二进制文件，它的内容具有严格的规范，文件中没有任何空格，全都是连续的 0/1。Class 文件 中的所有内容被分为两种类型：无符号数、表。
 
-* 无符号数  无符号数表示 Class 文件中的值，这些值没有任何类型，但有不同的长度。u1、u2、u4、u8 分别代表 1/2/4/8 字节的无符号数。
-* 表  由多个无符号数或者其他表作为数据项构成的复合数据类型。
+- 无符号数 无符号数表示 Class 文件中的值，这些值没有任何类型，但有不同的长度。u1、u2、u4、u8 分别代表 1/2/4/8 字节的无符号数。
+- 表 由多个无符号数或者其他表作为数据项构成的复合数据类型。
 
 Class 文件具体由以下几个构成:
 
-* 魔数
-* 版本信息
-* 常量池
-* 访问标志
-* 类索引、父类索引、接口索引集合
-* 字段表集合
-* 方法表集合
-* 属性表集合
+- 魔数
+- 版本信息
+- 常量池
+- 访问标志
+- 类索引、父类索引、接口索引集合
+- 字段表集合
+- 方法表集合
+- 属性表集合
 
 ### 魔数
 
@@ -47,59 +47,56 @@ Class 文件的魔数是用 16 进制表示的“CAFE BABE”，是不是很具�
 
 ### 常量池
 
-版本信息之后就是常量池，常量池中存放两种类型的常量：  
+版本信息之后就是常量池，常量池中存放两种类型的常量：
 
-
-* 字面值常量  
-
+- 字面值常量
 
   字面值常量就是我们在程序中定义的字符串、被 final 修饰的值。
 
-* 符号引用  
-
+- 符号引用
 
   符号引用就是我们定义的各种名字：类和接口的全限定名、字段的名字和描述符、方法的名字和描述符。
 
 #### 常量池的特点
 
-* 常量池中常量数量不固定，因此常量池开头放置一个 u2 类型的无符号数，用来存储当前常量池的容量。
-* 常量池的每一项常量都是一个表，表开始的第一位是一个 u1 类型的标志位（tag），代表当前这个常量属于哪种常量类型。
+- 常量池中常量数量不固定，因此常量池开头放置一个 u2 类型的无符号数，用来存储当前常量池的容量。
+- 常量池的每一项常量都是一个表，表开始的第一位是一个 u1 类型的标志位（tag），代表当前这个常量属于哪种常量类型。
 
 #### 常量池中常量类型
 
-| 类型    | tag   | 描述　|
-|---|---|---|
-| CONSTANT_utf8_info | 1 | UTF-8编码的字符串 |
-| CONSTANT_Integer_info | 3 | 整型字面量 |
-| CONSTANT_Float_info | 4 | 浮点型字面量 |
-| CONSTANT_Long_info  |5 | 长整型字面量 |
-| CONSTANT_Double_info | 6 |  双精度浮点型字面量 |
-| CONSTANT_Class_info | 7 |   类或接口的符号引用 |
-| CONSTANT_String_info    | 8 |   字符串类型字面量 |
-| CONSTANT_Fieldref_info  | 9 |   字段的符号引用 |
-| CONSTANT_Methodref_info | 10 |  类中方法的符号引用 |
-| CONSTANT_InterfaceMethodref_info    | 11 |  接口中方法的符号引用 |
-| CONSTANT_NameAndType_info | 12 |    字段或方法的符号引用 |
-| CONSTANT_MethodHandle_info  | 15 |  表示方法句柄 |
-| CONSTANT_MethodType_info    | 16 |  标识方法类型 |
-| CONSTANT_InvokeDynamic_info | 18 |  表示一个动态方法调用点 |
+| 类型                             | tag | 描述　                 |
+| -------------------------------- | --- | ---------------------- |
+| CONSTANT_utf8_info               | 1   | UTF-8 编码的字符串     |
+| CONSTANT_Integer_info            | 3   | 整型字面量             |
+| CONSTANT_Float_info              | 4   | 浮点型字面量           |
+| CONSTANT_Long_info               | 5   | 长整型字面量           |
+| CONSTANT_Double_info             | 6   | 双精度浮点型字面量     |
+| CONSTANT_Class_info              | 7   | 类或接口的符号引用     |
+| CONSTANT_String_info             | 8   | 字符串类型字面量       |
+| CONSTANT_Fieldref_info           | 9   | 字段的符号引用         |
+| CONSTANT_Methodref_info          | 10  | 类中方法的符号引用     |
+| CONSTANT_InterfaceMethodref_info | 11  | 接口中方法的符号引用   |
+| CONSTANT_NameAndType_info        | 12  | 字段或方法的符号引用   |
+| CONSTANT_MethodHandle_info       | 15  | 表示方法句柄           |
+| CONSTANT_MethodType_info         | 16  | 标识方法类型           |
+| CONSTANT_InvokeDynamic_info      | 18  | 表示一个动态方法调用点 |
 
-对于 CONSTANT\_Class\_info（此类型的常量代表一个类或者接口的符号引用），它的二维表结构如下：
+对于 CONSTANT_Class_info（此类型的常量代表一个类或者接口的符号引用），它的二维表结构如下：
 
-| 类型 | 名称 | 数量 |
-| --- | --- | --- |
-| u1 | tag | 1 |
-| u2 | name\_index | 1 |
+| 类型 | 名称       | 数量 |
+| ---- | ---------- | ---- |
+| u1   | tag        | 1    |
+| u2   | name_index | 1    |
 
-tag 是标志位，用于区分常量类型；name\_index 是一个索引值，它指向常量池中一个 CONSTANT\_Utf8\_info 类型常量，此常量代表这个类（或接口）的全限定名，这里 name\_index 值若为 0x0002，也即是指向了常量池中的第二项常量。
+tag 是标志位，用于区分常量类型；name_index 是一个索引值，它指向常量池中一个 CONSTANT_Utf8_info 类型常量，此常量代表这个类（或接口）的全限定名，这里 name_index 值若为 0x0002，也即是指向了常量池中的第二项常量。
 
-CONSTANT\_Utf8\_info 型常量的结构如下：
+CONSTANT_Utf8_info 型常量的结构如下：
 
-| 类型 | 名称 | 数量 |
-| --- | --- | --- |
-| u1 | tag | 1 |
-| u2 | length | 1 |
-| u1 | bytes | length |
+| 类型 | 名称   | 数量   |
+| ---- | ------ | ------ |
+| u1   | tag    | 1      |
+| u2   | length | 1      |
+| u1   | bytes  | length |
 
 tag 是当前常量的类型；length 表示这个字符串的长度；bytes 是这个字符串的内容（采用缩略的 UTF8 编码）
 
@@ -113,7 +110,7 @@ tag 是当前常量的类型；length 表示这个字符串的长度；bytes 是
 
 由于 Java 不允许多重继承，所以父类索引只有一个，除了 java.lang.Object 之外，所有的 Java 类都有父类，因此除了 java.lang.Object 外，所有 Java 类的父类索引都不为 0。一个类可能实现了多个接口，因此用接口索引集合来描述。这个集合第一项为 u2 类型的数据，表示索引表的容量，接下来就是接口的名字索引。
 
-类索引和父类索引用两个 u2 类型的索引值表示，它们各自指向一个类型为 CONSTANT\_Class\_info 的类描述符常量，通过该常量总的索引值可以找到定义在 CONSTANT\_Utf8\_info 类型的常量中的全限定名字符串。
+类索引和父类索引用两个 u2 类型的索引值表示，它们各自指向一个类型为 CONSTANT_Class_info 的类描述符常量，通过该常量总的索引值可以找到定义在 CONSTANT_Utf8_info 类型的常量中的全限定名字符串。
 
 ### 字段表集合
 
@@ -121,13 +118,13 @@ tag 是当前常量的类型；length 表示这个字符串的长度；bytes 是
 
 每一个字段表只表示一个成员变量，本类中的所有成员变量构成了字段表集合。字段表结构如下：
 
-| 类型 | 名称 | 数量 | 说明 |
-| --- | --- | --- | --- |
-| u2 | access\_flags | 1 | 字段的访问标志，与类稍有不同 |
-| u2 | name\_index | 1 | 字段名字的索引 |
-| u2 | descriptor\_index | 1 | 描述符，用于描述字段的数据类型。 基本数据类型用大写字母表示； 对象类型用“L 对象类型的全限定名”表示。 |
-| u2 | attributes\_count | 1 | 属性表集合的长度 |
-| u2 | attributes | attributes\_count | 属性表集合，用于存放属性的额外信息，如属性的值。 |
+| 类型 | 名称             | 数量             | 说明                                                                                                 |
+| ---- | ---------------- | ---------------- | ---------------------------------------------------------------------------------------------------- |
+| u2   | access_flags     | 1                | 字段的访问标志，与类稍有不同                                                                         |
+| u2   | name_index       | 1                | 字段名字的索引                                                                                       |
+| u2   | descriptor_index | 1                | 描述符，用于描述字段的数据类型。 基本数据类型用大写字母表示； 对象类型用“L 对象类型的全限定名”表示。 |
+| u2   | attributes_count | 1                | 属性表集合的长度                                                                                     |
+| u2   | attributes       | attributes_count | 属性表集合，用于存放属性的额外信息，如属性的值。                                                     |
 
 > 字段表集合中不会出现从父类（或接口）中继承而来的字段，但有可能出现原本 Java 代码中不存在的字段，譬如在内部类中为了保持对外部类的访问性，会自动添加指向外部类实例的字段。
 
@@ -135,7 +132,7 @@ tag 是当前常量的类型；length 表示这个字符串的长度；bytes 是
 
 方法表结构与属性表类似。
 
-volatile 关键字 和 transient 关键字不能修饰方法，所以方法表的访问标志中没有 ACC\_VOLATILE 和 ACC\_TRANSIENT 标志。
+volatile 关键字 和 transient 关键字不能修饰方法，所以方法表的访问标志中没有 ACC_VOLATILE 和 ACC_TRANSIENT 标志。
 
 方法表的属性表集合中有一张 Code 属性表，用于存储当前方法经编译器编译后的字节码指令。
 
@@ -143,8 +140,8 @@ volatile 关键字 和 transient 关键字不能修饰方法，所以方法表�
 
 每个属性对应一张属性表，属性表的结构如下：
 
-| 类型 | 名称 | 数量 |
-| --- | --- | --- |
-| u2 | attribute\_name\_index | 1 |
-| u4 | attribute\_length | 1 |
-| u1 | info | attribute\_length |
+| 类型 | 名称                 | 数量             |
+| ---- | -------------------- | ---------------- |
+| u2   | attribute_name_index | 1                |
+| u4   | attribute_length     | 1                |
+| u1   | info                 | attribute_length |

@@ -1,14 +1,17 @@
 # 内存分配与回收策略
+
 对象的内存分配，就是在堆上分配（也可能经过 JIT 编译后被拆散为标量类型并间接在栈上分配），对象主要分配在新生代的 Eden 区上，少数情况下可能直接分配在老年代，**分配规则不固定**，取决于当前使用的垃圾收集器组合以及相关的参数配置。
 
 以下列举几条最普遍的内存分配规则，供大家学习。
+
 ## 对象优先在 Eden 分配
+
 大多数情况下，对象在新生代 Eden 区中分配。当 Eden 区没有足够空间进行分配时，虚拟机将发起一次 Minor GC。
 
 👇**Minor GC** vs **Major GC**/**Full GC**：
 
-* Minor GC：回收新生代（包括 Eden 和 Survivor 区域），因为 Java 对象大多都具备朝生夕灭的特性，所以 Minor GC 非常频繁，一般回收速度也比较快。
-* Major GC / Full GC: 回收老年代，出现了 Major GC，经常会伴随至少一次的 Minor GC，但这并非绝对。Major GC 的速度一般会比 Minor GC 慢 10 倍 以上。 
+- Minor GC：回收新生代（包括 Eden 和 Survivor 区域），因为 Java 对象大多都具备朝生夕灭的特性，所以 Minor GC 非常频繁，一般回收速度也比较快。
+- Major GC / Full GC: 回收老年代，出现了 Major GC，经常会伴随至少一次的 Minor GC，但这并非绝对。Major GC 的速度一般会比 Minor GC 慢 10 倍 以上。
 
 > 在 JVM 规范中，Major GC 和 Full GC 都没有一个正式的定义，所以有人也简单地认为 Major GC 清理老年代，而 Full GC 清理整个内存堆。
 
@@ -43,19 +46,21 @@ JDK 6 Update 24 之后的规则变为：
 这个过程就是分配担保。
 
 ---
-👇总结一下有哪些情况可能会触发 JVM 进行 Full GC。
+
+👇 总结一下有哪些情况可能会触发 JVM 进行 Full GC。
+
 1. System.gc() 方法的调用<br>
-此方法的调用是建议 JVM 进行 Full GC，注意这**只是建议而非一定**，但在很多情况下它会触发 Full GC，从而增加 Full GC 的频率。通常情况下我们只需要让虚拟机自己去管理内存即可，我们可以通过 -XX:+ DisableExplicitGC 来禁止调用 System.gc()。
+   此方法的调用是建议 JVM 进行 Full GC，注意这**只是建议而非一定**，但在很多情况下它会触发 Full GC，从而增加 Full GC 的频率。通常情况下我们只需要让虚拟机自己去管理内存即可，我们可以通过 -XX:+ DisableExplicitGC 来禁止调用 System.gc()。
 
 2. 老年代空间不足<br>
-老年代空间不足会触发 Full GC操作，若进行该操作后空间依然不足，则会抛出如下错误：<br>
-` java.lang.OutOfMemoryError: Java heap space `
+   老年代空间不足会触发 Full GC 操作，若进行该操作后空间依然不足，则会抛出如下错误：<br>
+   `java.lang.OutOfMemoryError: Java heap space`
 
 3. 永久代空间不足<br>
-JVM 规范中运行时数据区域中的方法区，在 HotSpot 虚拟机中也称为永久代（Permanet Generation），存放一些类信息、常量、静态变量等数据，当系统要加载的类、反射的类和调用的方法较多时，永久代可能会被占满，会触发 Full GC。如果经过 Full GC 仍然回收不了，那么 JVM 会抛出如下错误信息：<br>
-`java.lang.OutOfMemoryError: PermGen space `
+   JVM 规范中运行时数据区域中的方法区，在 HotSpot 虚拟机中也称为永久代（Permanet Generation），存放一些类信息、常量、静态变量等数据，当系统要加载的类、反射的类和调用的方法较多时，永久代可能会被占满，会触发 Full GC。如果经过 Full GC 仍然回收不了，那么 JVM 会抛出如下错误信息：<br>
+   `java.lang.OutOfMemoryError: PermGen space `
 
 4. CMS GC 时出现 promotion failed 和 concurrent mode failure<br>
-promotion failed，就是上文所说的担保失败，而 concurrent mode failure 是在执行 CMS GC 的过程中同时有对象要放入老年代，而此时老年代空间不足造成的。
+   promotion failed，就是上文所说的担保失败，而 concurrent mode failure 是在执行 CMS GC 的过程中同时有对象要放入老年代，而此时老年代空间不足造成的。
 
-5. 统计得到的Minor GC晋升到旧生代的平均大小大于老年代的剩余空间
+5. 统计得到的 Minor GC 晋升到旧生代的平均大小大于老年代的剩余空间
