@@ -1,7 +1,7 @@
 # Java 虚拟机底层原理知识总结
 
 <a href="https://github.com/doocs/jvm/actions?query=workflow%3ASync"><img src="https://github.com/doocs/jvm/workflows/Sync/badge.svg"></a>
-<a href="https://github.com/doocs/jvm/blob/master/LICENSE"><img src="https://badgen.net/github/license/doocs/jvm?color=green" alt="license"></a>
+<a href="https://github.com/doocs/jvm/blob/main/LICENSE"><img src="https://badgen.net/github/license/doocs/jvm?color=green" alt="license"></a>
 <a href="https://github.com/doocs/jvm/issues"><img src="https://badgen.net/github/open-issues/doocs/jvm" alt="issues"></a>
 <a href="https://github.com/doocs/jvm/stargazers"><img src="https://badgen.net/github/stars/doocs/jvm" alt="stars"></a>
 <a href="https://github.com/doocs/jvm"><img src="https://badgen.net/badge/⭐/GitHub/blue" alt="github"></a>
