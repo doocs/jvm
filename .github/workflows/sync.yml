@@ -22,3 +22,4 @@ jobs:
           gitee-username: yanglbme
           gitee-password: ${{ secrets.GITEE_PASSWORD }}
           gitee-repo: doocs/jvm
+          branch: main
