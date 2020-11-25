@@ -8,6 +8,7 @@
 <a href="https://gitee.com/doocs/jvm"><img src="https://badgen.net/badge/⭐/Gitee/blue" alt="gitee"></a>
 <a href="http://makeapullrequest.com"><img src="https://badgen.net/badge/PRs/welcome/cyan" alt="PRs Welcome"></a>
 <a href="https://github.com/doocs/doocs.github.io"><img src="https://badgen.net/badge/organization/join%20us/cyan" alt="open-source-organization"></a>
+<a href="https://app.fossa.com/projects/git%2Bgithub.com%2Fdoocs%2Fjvm?ref=badge_shield" alt="FOSSA Status"><img src="https://app.fossa.com/api/projects/git%2Bgithub.com%2Fdoocs%2Fjvm.svg?type=shield"/></a>
 
 这里仅仅记录了一些笔者认为需要重点掌握的 JVM 知识点，如果你想更加全面地了解 JVM 底层原理，可以阅读周志明老师《深入理解 Java 虚拟机——JVM 高级特性与最佳实践(第 2/3 版)》全书。
 
@@ -33,6 +34,10 @@
 ## 写作规范
 
 参考《[中文技术文档的写作规范](https://github.com/ruanyf/document-style-guide)》。
+
+## License
+
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fdoocs%2Fjvm.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Fdoocs%2Fjvm?ref=badge_large)
 
 ---
 
