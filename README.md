@@ -35,6 +35,10 @@
 
 参考《[中文技术文档的写作规范](https://github.com/ruanyf/document-style-guide)》。
 
+## License
+
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fdoocs%2Fjvm.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Fdoocs%2Fjvm?ref=badge_large)
+
 ---
 
 ## Doocs 社区优质项目
@@ -85,7 +89,3 @@ Doocs 技术社区，致力于打造一个内容完整、持续成长的互联�
 关注「**Doocs 开源社区**」公众号，回复 **JVM**，即可获取本项目离线 PDF 文档，学习更加方便！
 
 ![](./images/jvm-pdf.png)
-
-
-## License
-[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fdoocs%2Fjvm.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Fdoocs%2Fjvm?ref=badge_large)
