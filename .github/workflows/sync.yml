@@ -7,6 +7,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    if: github.repository == 'doocs/jvm'
     steps:
     - name: Sync to Gitee
       uses: wearerequired/git-mirror-action@master
@@ -17,7 +18,7 @@ jobs:
           destination-repo: git@gitee.com:Doocs/jvm.git
 
     - name: Build Gitee Pages
-      uses: yanglbme/gitee-pages-action@master
+      uses: yanglbme/gitee-pages-action@main
       with:
           gitee-username: yanglbme
           gitee-password: ${{ secrets.GITEE_PASSWORD }}
