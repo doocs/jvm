@@ -27,7 +27,9 @@
 
 ## 站点
 
-本项目基于 [Docsify](https://docsify.js.org) 进行构建，并同步部署（这里用到 [Gitee Pages Action](https://github.com/yanglbme/gitee-pages-action) 自动部署工具，非常好用的一个开源工具，欢迎 Star 关注）在以下三个站点：
+本项目基于 [Docsify](https://docsify.js.org) 进行构建，并使用开源小工具 [Gitee Pages Actions](https://github.com/yanglbme/gitee-pages-action) 实现站点的自动部署更新。
+
+目前支持以下三个站点访问：
 
 - Netlify: https://jvm.netlify.app
 - Gitee Pages: https://doocs.gitee.io/jvm
