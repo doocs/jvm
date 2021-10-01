@@ -198,7 +198,7 @@ slot的理解
 
   SecurityException - 安全异常
 
-  UnsupportedOperationException - 不支持的操作异常
+  UnsupportedOperationException -不支持的操作异常
 
 ## 本地方法栈（C 栈）
 
