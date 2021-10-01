@@ -24,6 +24,7 @@
 - [类加载的时机](/docs/08-load-class-time.md)
 - [类加载的过程](/docs/09-load-class-process.md)
 - [类加载器](/docs/10-class-loader.md)
+- [jvm虚拟栈](/docs/11-virtual-machine-stack.md)
 
 ## 站点
 
