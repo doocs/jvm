@@ -97,7 +97,7 @@ Java 中任何一个普通方法都具备虚函数的特征（运行期确认，
 
 ### Java 虚拟机栈的特点
 
-- 运行的速度特别快,仅仅次与 PC 寄存器
+- 运行速度特别快,仅仅次于 PC 寄存器。
 - 局部变量表随着栈帧的创建而创建，它的大小在编译时确定，创建时只需分配事先规定的大小即可。在方法运行过程中，局部变量表的大小不会发生改变。
 - Java 虚拟机栈会出现两种异常：StackOverFlowError 和 OutOfMemoryError。
   - StackOverFlowError 若 Java 虚拟机栈的大小不允许动态扩展，那么当线程请求栈的深度超过当前 Java 虚拟机栈的最大深度时，抛出 StackOverFlowError 异常。
