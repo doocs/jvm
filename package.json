@@ -7,6 +7,7 @@
     "doc": "docs"
   },
   "scripts": {
+    "dev": "docsify serve --open",
     "convert": "node_modules/.bin/docsify-pdf-converter"
   },
   "repository": {
