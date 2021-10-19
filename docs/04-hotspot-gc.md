@@ -63,8 +63,8 @@ CMS（Concurrent Mark Sweep，并发标记清除）收集器是以获取最短�
 CMS 的缺点：
 
 - 吞吐量低
-- 无法处理浮动垃圾，导致频繁 Full GC
-- 使用“标记-清除”算法产生碎片空间
+- 无法处理浮动垃圾
+- 使用“标记-清除”算法产生碎片空间，导致频繁 Full GC
 
 对于产生碎片空间的问题，可以通过开启 -XX:+UseCMSCompactAtFullCollection，在每次 Full GC 完成后都会进行一次内存压缩整理，将零散在各处的对象整理到一块。设置参数 -XX:CMSFullGCsBeforeCompaction 告诉 CMS，经过了 N 次 Full GC 之后再进行一次内存整理。
 
