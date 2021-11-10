@@ -29,9 +29,8 @@
 
 本项目使用开源小工具 [Gitee Pages Actions](https://github.com/yanglbme/gitee-pages-action) 实现站点的自动部署更新。
 
-目前支持以下三个站点访问：
+目前支持以下两个站点访问：
 
-- Netlify: https://jvm.netlify.app
 - Gitee Pages: https://doocs.gitee.io/jvm
 - GitHub Pages: https://doocs.github.io/jvm
 
