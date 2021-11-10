@@ -1,4 +1,4 @@
-# Java 虚拟机底层原理知识总结
+# 开始学习
 
 <a href="https://github.com/doocs/jvm/actions?query=workflow%3ASync"><img src="https://github.com/doocs/jvm/workflows/Sync/badge.svg"></a>
 <a href="https://github.com/doocs/jvm/blob/main/LICENSE"><img src="https://badgen.net/github/license/doocs/jvm?color=green" alt="license"></a>
@@ -14,16 +14,16 @@
 
 ## 清单
 
-- [JVM 内存结构](/docs/01-jvm-memory-structure.md)
-- [HotSpot 虚拟机对象探秘](/docs/02-hotspot-jvm-object.md)
-- [垃圾收集策略与算法](/docs/03-gc-algorithms.md)
-- [HotSpot 垃圾收集器](/docs/04-hotspot-gc.md)
-- [内存分配与回收策略](/docs/05-memory-allocation-gc.md)
-- [JVM 性能调优](/docs/06-jvm-performance-tuning.md)
-- [类文件结构](/docs/07-class-structure.md)
-- [类加载的时机](/docs/08-load-class-time.md)
-- [类加载的过程](/docs/09-load-class-process.md)
-- [类加载器](/docs/10-class-loader.md)
+- [JVM 内存结构](./01-jvm-memory-structure.md)
+- [HotSpot 虚拟机对象探秘](./02-hotspot-jvm-object.md)
+- [垃圾收集策略与算法](./03-gc-algorithms.md)
+- [HotSpot 垃圾收集器](./04-hotspot-gc.md)
+- [内存分配与回收策略](./05-memory-allocation-gc.md)
+- [JVM 性能调优](./06-jvm-performance-tuning.md)
+- [类文件结构](./07-class-structure.md)
+- [类加载的时机](./08-load-class-time.md)
+- [类加载的过程](./09-load-class-process.md)
+- [类加载器](./10-class-loader.md)
 
 ## 站点
 
@@ -31,9 +31,9 @@
 
 目前支持以下三个站点访问：
 
-- Netlify: https://jvm.netlify.app
-- Gitee Pages: https://doocs.gitee.io/jvm
-- GitHub Pages: https://doocs.github.io/jvm
+- [Netlify](https://jvm.netlify.app)
+- [Gitee Pages](https://doocs.gitee.io/jvm)
+- [GitHub Pages](https://doocs.github.io/jvm)
 
 ## 写作规范
 

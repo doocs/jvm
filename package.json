@@ -1,26 +1,26 @@
 {
   "name": "jvm",
   "version": "1.0.0",
-  "description": "dive into jvm",
-  "main": "index.js",
+  "description": "Java 虚拟机底层原理知识总结",
   "directories": {
     "doc": "docs"
   },
   "scripts": {
-    "dev": "docsify serve --open",
-    "convert": "node_modules/.bin/docsify-pdf-converter"
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs"
+  },
+  "devDependencies": {
+    "@vuepress/plugin-search": "^2.0.0-beta.27",
+    "vuepress": "^2.0.0-beta.27"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/doocs/jvm.git"
   },
   "author": "yanglbme",
-  "license": "CC-BY-SA-4.0",
+  "license": "CC-BY-NC-SA",
   "bugs": {
     "url": "https://github.com/doocs/jvm/issues"
   },
-  "homepage": "https://github.com/doocs/jvm#readme",
-  "devDependencies": {
-    "docsify-pdf-converter": "^2.0.7"
-  }
+  "homepage": "https://github.com/doocs/jvm#readme"
 }
