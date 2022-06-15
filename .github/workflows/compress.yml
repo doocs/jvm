@@ -21,6 +21,8 @@ jobs:
           compressOnly: true
 
       - name: Commit Files
+        if: |
+          steps.calibre.outputs.markdown != ''
         run: |
           git config --local user.email "szuyanglb@outlook.com"
           git config --local user.name "yanglbme"
