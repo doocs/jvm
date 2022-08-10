@@ -18,7 +18,7 @@
 - 扩展类加载器（Extension ClassLoader）： 负责加载 `<JAVA_HOME>\lib\ext` 目录中的所有类库，开发者可以直接使用扩展类加载器。
 - 应用程序类加载器（Application ClassLoader）： 由于这个类加载器是 ClassLoader 中的 `getSystemClassLoader()` 方法的返回值，所以一般也称它为“系统类加载器”。它负责加载用户类路径（classpath）上所指定的类库，开发者可以直接使用这个类加载器，如果应用程序中没有自定义过自己的类加载器，一般情况下这个就是程序中默认的类加载器。
 
-![ClassLoader](https://cdn.jsdelivr.net/gh/doocs/jvm@main/images/classloader.png)
+![ClassLoader](https://cdn-doocs.oss-cn-shenzhen.aliyuncs.com/gh/doocs/jvm@main/images/classloader.png)
 
 当然，如果有必要，还可以加入自己定义的类加载器。
 

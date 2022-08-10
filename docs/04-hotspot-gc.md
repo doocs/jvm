@@ -12,7 +12,7 @@ HotSpot 虚拟机提供了多种垃圾收集器，每种收集器都有各自的
 
 由于 Serial 收集器只使用一条 GC 线程，避免了线程切换的开销，从而简单高效。
 
-![Serial](https://cdn.jsdelivr.net/gh/doocs/jvm@main/images/serial.png)
+![Serial](https://cdn-doocs.oss-cn-shenzhen.aliyuncs.com/gh/doocs/jvm@main/images/serial.png)
 
 ### ParNew 垃圾收集器（多线程）
 
@@ -20,7 +20,7 @@ ParNew 是 Serial 的多线程版本。由多条 GC 线程并行地进行垃圾�
 
 ParNew 追求“**低停顿时间**”,与 Serial 唯一区别就是使用了多线程进行垃圾收集，在多 CPU 环境下性能比 Serial 会有一定程度的提升；但**线程切换需要额外的开销**，因此在单 CPU 环境中表现不如 Serial。
 
-![ParNew](https://cdn.jsdelivr.net/gh/doocs/jvm@main/images/parnew.png)
+![ParNew](https://cdn-doocs.oss-cn-shenzhen.aliyuncs.com/gh/doocs/jvm@main/images/parnew.png)
 
 ### Parallel Scavenge 垃圾收集器（多线程）
 
@@ -58,7 +58,7 @@ CMS（Concurrent Mark Sweep，并发标记清除）收集器是以获取最短�
 
 并发标记与并发清除过程耗时最长，且可以与用户线程一起工作，因此，**总体上说**，CMS 收集器的内存回收过程是与用户线程**一起并发执行**的。
 
-![CMS](https://cdn.jsdelivr.net/gh/doocs/jvm@main/images/cms.png)
+![CMS](https://cdn-doocs.oss-cn-shenzhen.aliyuncs.com/gh/doocs/jvm@main/images/cms.png)
 
 CMS 的缺点：
 

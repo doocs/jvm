@@ -14,7 +14,7 @@
 
 验证、准备、解析 3 个阶段统称为连接。
 
-![Load Class](https://cdn.jsdelivr.net/gh/doocs/jvm@main/images/loadclass.png)
+![Load Class](https://cdn-doocs.oss-cn-shenzhen.aliyuncs.com/gh/doocs/jvm@main/images/loadclass.png)
 
 加载、验证、准备、初始化和卸载这 5 个阶段的顺序是确定的，类的加载过程必须按照这种顺序按部就班地开始（注意是“开始”，而不是“进行”或“完成”），而解析阶段则不一定：它在某些情况下可以在初始化后再开始，这是为了支持 Java 语言的运行时绑定。
 
