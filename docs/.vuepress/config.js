@@ -2,7 +2,15 @@ module.exports = {
   lang: "zh-CN",
   title: "JVM 底层原理最全知识总结",
   description: "Doocs开源社区",
-  head: [['link', { rel: 'icon', href: 'https://avatars.githubusercontent.com/u/43716716?s=200&v=4' }]],
+  head: [
+    [
+      "link",
+      {
+        rel: "icon",
+        href: "https://avatars.githubusercontent.com/u/43716716?s=200&v=4",
+      },
+    ],
+  ],
   base: "/jvm/",
   themeConfig: {
     repo: "doocs/jvm",
@@ -13,10 +21,10 @@ module.exports = {
     editLinkText: "编辑",
     lastUpdatedText: "最近更新时间",
     locales: {
-      '/': {
-        tip: '说明',
-        warning: '注意',
-        danger: '警告',
+      "/": {
+        tip: "说明",
+        warning: "注意",
+        danger: "警告",
       },
     },
     sidebar: [
