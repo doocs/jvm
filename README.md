@@ -60,7 +60,7 @@ Doocs 技术社区，致力于打造一个内容完整、持续成长的互联�
 
 ## 公众号
 
-[Doocs](https://github.com/doocs) 技术社区旗下唯一公众号「**Doocs 开源社区**」​，欢迎扫码关注，**专注分享技术领域相关知识及行业最新资讯**。当然，也可以加我个人微信（备注：GitHub），拉你进技术交流群。
+[Doocs](https://github.com/doocs) 技术社区旗下唯一公众号「**Doocs**」​，欢迎扫码关注，**专注分享技术领域相关知识及行业最新资讯**。当然，也可以加我个人微信（备注：GitHub），拉你进技术交流群。
 
 <table>
   <tr>
@@ -79,6 +79,6 @@ Doocs 技术社区，致力于打造一个内容完整、持续成长的互联�
   </tr>
 </table>
 
-关注「**Doocs 开源社区**」公众号，回复 **JVM**，即可获取本项目离线 PDF 文档，学习更加方便！
+关注「**Doocs**」公众号，回复 **JVM**，即可获取本项目离线 PDF 文档，学习更加方便！
 
 ![](https://cdn-doocs.oss-cn-shenzhen.aliyuncs.com/gh/doocs/jvm@main/images/jvm-pdf.png)
