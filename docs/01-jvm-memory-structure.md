@@ -138,7 +138,7 @@ Java 中任何一个普通方法都具备虚函数的特征（运行期确认，
 
 堆是用来存放对象的内存空间，`几乎`所有的对象都存储在堆中。
 
-![jvm-memory](../images/jvm-memory.png)
+![jvm-memory](https://cdn-doocs.oss-cn-shenzhen.aliyuncs.com/gh/doocs/jvm@main/images/jvm-memory.png)
 
 
 
@@ -265,7 +265,7 @@ Java 虚拟机规范中定义方法区是堆的一个逻辑部分。方法区存
 
 当类被 Java 虚拟机加载后， .class 文件中的常量就存放在方法区的运行时常量池中。而且在运行期间，可以向常量池中添加新的常量。如 String 类的 `intern()` 方法就能在运行期间向常量池中添加字符串常量。
 
-![jvm-runtime-constant-pool](../images/jvm-runtime-constant-pool.png)
+![jvm-runtime-constant-pool](https://cdn-doocs.oss-cn-shenzhen.aliyuncs.com/gh/doocs/jvm@main/images/jvm-runtime-constant-pool.png)
 
 ## 直接内存（堆外内存）
 
@@ -285,5 +285,7 @@ Java 虚拟机规范中定义方法区是堆的一个逻辑部分。方法区存
 - 堆内存作用链：本地 IO -&gt; 直接内存 -&gt; 非直接内存 -&gt; 直接内存 -&gt; 本地 IO
 
 > 服务器管理员在配置虚拟机参数时，会根据实际内存设置`-Xmx`等参数信息，但经常忽略直接内存，使得各个内存区域总和大于物理内存限制，从而导致动态扩展时出现`OutOfMemoryError`异常。
->
-> ![jvm-off-heap-memory](../images/jvm-off-heap-memory.png)
+
+
+
+> ![jvm-off-heap-memory](https://cdn-doocs.oss-cn-shenzhen.aliyuncs.com/gh/doocs/jvm@main/images/jvm-off-heap-memory.png)
