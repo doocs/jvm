@@ -1,0 +1,4 @@
+.idea/
+.github/
+node_modules/
+docs/.vuepress/
