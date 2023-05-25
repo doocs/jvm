@@ -57,6 +57,10 @@ GC Roots 并不包括堆中对象所引用的对象，这样就不会有循环�
 
 ### 判定 finalize() 是否有必要执行
 
+![](https://cdn-doocs.oss-cn-shenzhen.aliyuncs.com/gh/doocs/jvm@main/images/finalize-method-process.jpg)
+
+
+
 JVM 会判断此对象是否有必要执行 finalize() 方法，如果对象没有覆盖 finalize() 方法，或者 finalize() 方法已经被虚拟机调用过，那么视为“没有必要执行”。那么对象基本上就真的被回收了。
 
 如果对象被判定为有必要执行 finalize() 方法，那么对象会被放入一个 F-Queue 队列中，虚拟机会以较低的优先级执行这些 finalize()方法，但不会确保所有的 finalize() 方法都会执行结束。如果 finalize() 方法出现耗时操作，虚拟机就直接停止指向该方法，将对象清除。
@@ -66,6 +70,8 @@ JVM 会判断此对象是否有必要执行 finalize() 方法，如果对象没�
 如果在执行 finalize() 方法时，将 this 赋给了某一个引用，那么该对象就重生了。如果没有，那么就会被垃圾收集器清除。
 
 > 任何一个对象的 finalize() 方法只会被系统自动调用一次，如果对象面临下一次回收，它的 finalize() 方法不会被再次执行，想继续在 finalize() 中自救就失效了。
+
+
 
 ## 回收方法区内存
 
@@ -94,6 +100,8 @@ JVM 会判断此对象是否有必要执行 finalize() 方法，如果对象没�
 
 ### 标记-清除算法
 
+![](https://cdn-doocs.oss-cn-shenzhen.aliyuncs.com/gh/doocs/jvm@main/images/mark-and-sweep.jpg)
+
 **标记**的过程是：遍历所有的 `GC Roots`，然后将所有 `GC Roots` 可达的对象**标记为存活的对象**。
 
 **清除**的过程将遍历堆中所有的对象，将没有标记的对象全部清除掉。与此同时，清除那些被标记过的对象的标记，以便下次的垃圾回收。
@@ -104,6 +112,8 @@ JVM 会判断此对象是否有必要执行 finalize() 方法，如果对象没�
 - 空间问题：标记清除之后会产生大量不连续的内存碎片，碎片太多可能导致以后需要分配较大对象时，无法找到足够的连续内存而不得不提前触发另一次垃圾收集动作。
 
 ### 复制算法（新生代）
+
+![](https://cdn-doocs.oss-cn-shenzhen.aliyuncs.com/gh/doocs/jvm@main/images/mark-and-copy.jpg)
 
 为了解决效率问题，“复制”收集算法出现了。它将可用内存按容量划分为大小相等的两块，每次只使用其中的一块。当这一块内存用完，需要进行垃圾收集时，就将存活者的对象复制到另一块上面，然后将第一块内存全部清除。这种算法有优有劣：
 
@@ -119,6 +129,8 @@ JVM 会判断此对象是否有必要执行 finalize() 方法，如果对象没�
 为对象分配内存空间时，如果 Eden+Survivor 中空闲区域无法装下该对象，会触发 MinorGC 进行垃圾收集。但如果 Minor GC 过后依然有超过 10% 的对象存活，这样存活的对象直接通过分配担保机制进入老年代，然后再将新对象存入 Eden 区。
 
 ### 标记-整理算法（老年代）
+
+![](https://cdn-doocs.oss-cn-shenzhen.aliyuncs.com/gh/doocs/jvm@main/images/mark-and-compact.jpg)
 
 **标记**：它的第一个阶段与**标记-清除算法**是一模一样的，均是遍历 `GC Roots`，然后将存活的对象标记。
 
