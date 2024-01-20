@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="generator" content="VuePress 2.0.0-beta.49">
+    <style>
+      :root {
+        --c-bg: #fff;
+      }
+      html.dark {
+        --c-bg: #22272e;
+      }
+      html, body {
+        background-color: var(--c-bg);
+      }
+    </style>
+    <script>
+      const userMode = localStorage.getItem('vuepress-color-scheme');
+			const systemDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+			if (userMode === 'dark' || (userMode !== 'light' && systemDarkMode)) {
+				document.documentElement.classList.toggle('dark', true);
+			}
+    </script>
+    <link rel="icon" href="https://avatars.githubusercontent.com/u/43716716?s=200&v=4"><title>类加载的时机 | JVM 底层原理最全知识总结</title><meta name="description" content="Doocs开源社区">
+    <link rel="modulepreload" href="/jvm/assets/app.29af9a14.js"><link rel="modulepreload" href="/jvm/assets/08-load-class-time.html.e0d07b6a.js"><link rel="modulepreload" href="/jvm/assets/08-load-class-time.html.3e5dbf40.js"><link rel="prefetch" href="/jvm/assets/00-quickstart.html.862e3a31.js"><link rel="prefetch" href="/jvm/assets/01-jvm-memory-structure.html.deb1c85a.js"><link rel="prefetch" href="/jvm/assets/02-hotspot-jvm-object.html.a60caf77.js"><link rel="prefetch" href="/jvm/assets/03-gc-algorithms.html.2fb6ae18.js"><link rel="prefetch" href="/jvm/assets/04-hotspot-gc.html.5d0f1ee9.js"><link rel="prefetch" href="/jvm/assets/05-memory-allocation-gc.html.f372b9d5.js"><link rel="prefetch" href="/jvm/assets/06-jvm-performance-tuning.html.6a1c8e00.js"><link rel="prefetch" href="/jvm/assets/07-class-structure.html.250be31b.js"><link rel="prefetch" href="/jvm/assets/09-load-class-process.html.12e4430e.js"><link rel="prefetch" href="/jvm/assets/10-class-loader.html.c5652cbe.js"><link rel="prefetch" href="/jvm/assets/index.html.545091a3.js"><link rel="prefetch" href="/jvm/assets/summary.html.9551ded5.js"><link rel="prefetch" href="/jvm/assets/404.html.265028f6.js"><link rel="prefetch" href="/jvm/assets/00-quickstart.html.7efbd7e1.js"><link rel="prefetch" href="/jvm/assets/01-jvm-memory-structure.html.2fce3b31.js"><link rel="prefetch" href="/jvm/assets/02-hotspot-jvm-object.html.1c83594c.js"><link rel="prefetch" href="/jvm/assets/03-gc-algorithms.html.ff70d238.js"><link rel="prefetch" href="/jvm/assets/04-hotspot-gc.html.53a75542.js"><link rel="prefetch" href="/jvm/assets/05-memory-allocation-gc.html.e413b6da.js"><link rel="prefetch" href="/jvm/assets/06-jvm-performance-tuning.html.3fa8ba97.js"><link rel="prefetch" href="/jvm/assets/07-class-structure.html.4019df7a.js"><link rel="prefetch" href="/jvm/assets/09-load-class-process.html.07296370.js"><link rel="prefetch" href="/jvm/assets/10-class-loader.html.050b6e5c.js"><link rel="prefetch" href="/jvm/assets/index.html.498b75e3.js"><link rel="prefetch" href="/jvm/assets/summary.html.56ddf9e3.js"><link rel="prefetch" href="/jvm/assets/404.html.9be77e1f.js"><link rel="prefetch" href="/jvm/assets/404.344ca669.js"><link rel="prefetch" href="/jvm/assets/Layout.d3112e4e.js">
+    <link rel="stylesheet" href="/jvm/assets/style.a5721445.css">
+  </head>
+  <body>
+    <div id="app"><!--[--><div class="theme-container"><!--[--><header class="navbar"><div class="toggle-sidebar-button" title="toggle sidebar" aria-expanded="false" role="button" tabindex="0"><div class="icon" aria-hidden="true"><span></span><span></span><span></span></div></div><span><a href="/jvm/" class=""><!----><span class="site-name">JVM 底层原理最全知识总结</span></a></span><div class="navbar-items-wrapper" style=""><!--[--><!--]--><!----><!--[--><!--]--><button class="toggle-color-mode-button" title="toggle color mode"><svg style="" class="icon" focusable="false" viewBox="0 0 32 32"><path d="M16 12.005a4 4 0 1 1-4 4a4.005 4.005 0 0 1 4-4m0-2a6 6 0 1 0 6 6a6 6 0 0 0-6-6z" fill="currentColor"></path><path d="M5.394 6.813l1.414-1.415l3.506 3.506L8.9 10.318z" fill="currentColor"></path><path d="M2 15.005h5v2H2z" fill="currentColor"></path><path d="M5.394 25.197L8.9 21.691l1.414 1.415l-3.506 3.505z" fill="currentColor"></path><path d="M15 25.005h2v5h-2z" fill="currentColor"></path><path d="M21.687 23.106l1.414-1.415l3.506 3.506l-1.414 1.414z" fill="currentColor"></path><path d="M25 15.005h5v2h-5z" fill="currentColor"></path><path d="M21.687 8.904l3.506-3.506l1.414 1.415l-3.506 3.505z" fill="currentColor"></path><path d="M15 2.005h2v5h-2z" fill="currentColor"></path></svg><svg style="display:none;" class="icon" focusable="false" viewBox="0 0 32 32"><path d="M13.502 5.414a15.075 15.075 0 0 0 11.594 18.194a11.113 11.113 0 0 1-7.975 3.39c-.138 0-.278.005-.418 0a11.094 11.094 0 0 1-3.2-21.584M14.98 3a1.002 1.002 0 0 0-.175.016a13.096 13.096 0 0 0 1.825 25.981c.164.006.328 0 .49 0a13.072 13.072 0 0 0 10.703-5.555a1.01 1.01 0 0 0-.783-1.565A13.08 13.08 0 0 1 15.89 4.38A1.015 1.015 0 0 0 14.98 3z" fill="currentColor"></path></svg></button><!----></div></header><!--]--><div class="sidebar-mask"></div><!--[--><aside class="sidebar"><!----><!--[--><!--]--><ul class="sidebar-items"><!--[--><li><p tabindex="0" class="sidebar-item sidebar-heading">类加载的时机 <!----></p><ul style="display:none;" class="sidebar-item-children"><!--[--><li><a aria-current="page" href="/jvm/08-load-class-time.html#类的生命周期" class="router-link-active router-link-exact-active sidebar-item" aria-label="类的生命周期"><!--[--><!--]--> 类的生命周期 <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/jvm/08-load-class-time.html#类加载过程中-初始化-开始的时机" class="router-link-active router-link-exact-active sidebar-item" aria-label="类加载过程中“初始化”开始的时机"><!--[--><!--]--> 类加载过程中“初始化”开始的时机 <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/jvm/08-load-class-time.html#被动引用演示-demo" class="router-link-active router-link-exact-active sidebar-item" aria-label="被动引用演示 Demo"><!--[--><!--]--> 被动引用演示 Demo <!--[--><!--]--></a><ul style="display:none;" class="sidebar-item-children"><!--[--><li><a aria-current="page" href="/jvm/08-load-class-time.html#demo1" class="router-link-active router-link-exact-active sidebar-item" aria-label="Demo1"><!--[--><!--]--> Demo1 <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/jvm/08-load-class-time.html#demo2" class="router-link-active router-link-exact-active sidebar-item" aria-label="Demo2"><!--[--><!--]--> Demo2 <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/jvm/08-load-class-time.html#demo3" class="router-link-active router-link-exact-active sidebar-item" aria-label="Demo3"><!--[--><!--]--> Demo3 <!--[--><!--]--></a><!----></li><!--]--></ul></li><li><a aria-current="page" href="/jvm/08-load-class-time.html#接口的加载过程" class="router-link-active router-link-exact-active sidebar-item" aria-label="接口的加载过程"><!--[--><!--]--> 接口的加载过程 <!--[--><!--]--></a><!----></li><!--]--></ul></li><!--]--></ul><!--[--><!--]--></aside><!--]--><!--[--><main class="page"><!--[--><!--]--><div class="theme-default-content"><!--[--><!--]--><div><h1 id="类加载的时机" tabindex="-1"><a class="header-anchor" href="#类加载的时机" aria-hidden="true">#</a> 类加载的时机</h1><h2 id="类的生命周期" tabindex="-1"><a class="header-anchor" href="#类的生命周期" aria-hidden="true">#</a> 类的生命周期</h2><p>类从被加载到虚拟机内存开始，到卸载出内存为止，它的整个生命周期包括以下 7 个阶段：</p><ul><li>加载</li><li>验证</li><li>准备</li><li>解析</li><li>初始化</li><li>使用</li><li>卸载</li></ul><p>验证、准备、解析 3 个阶段统称为连接。</p><p><img src="https://cdn-doocs.oss-cn-shenzhen.aliyuncs.com/gh/doocs/jvm@main/images/loadclass.png" alt="Load Class"></p><p>加载、验证、准备、初始化和卸载这 5 个阶段的顺序是确定的，类的加载过程必须按照这种顺序按部就班地开始（注意是“开始”，而不是“进行”或“完成”），而解析阶段则不一定：它在某些情况下可以在初始化后再开始，这是为了支持 Java 语言的运行时绑定。</p><h2 id="类加载过程中-初始化-开始的时机" tabindex="-1"><a class="header-anchor" href="#类加载过程中-初始化-开始的时机" aria-hidden="true">#</a> 类加载过程中“初始化”开始的时机</h2><p>Java 虚拟机规范没有强制约束类加载过程的第一阶段（即：加载）什么时候开始，但对于“初始化”阶段，有着严格的规定。有且仅有 5 种情况必须立即对类进行“初始化”：</p><ul><li>在遇到 new、putstatic、getstatic、invokestatic 字节码指令时，如果类尚未初始化，则需要先触发其初始化。</li><li>对类进行反射调用时，如果类还没有初始化，则需要先触发其初始化。</li><li>初始化一个类时，如果其父类还没有初始化，则需要先初始化父类。</li><li>虚拟机启动时，用于需要指定一个包含 <code>main()</code> 方法的主类，虚拟机会先初始化这个主类。</li><li>当使用 JDK 1.7 的动态语言支持时，如果一个 java.lang.invoke.MethodHandle 实例最后的解析结果为 REF_getStatic、REF_putStatic、REF_invokeStatic 的方法句柄，并且这个方法句柄所对应的类还没初始化，则需要先触发其初始化。</li></ul><p>这 5 种场景中的行为称为对一个类进行<strong>主动引用</strong>，除此之外，其它所有引用类的方式都不会触发初始化，称为<strong>被动引用</strong>。</p><h2 id="被动引用演示-demo" tabindex="-1"><a class="header-anchor" href="#被动引用演示-demo" aria-hidden="true">#</a> 被动引用演示 Demo</h2><h3 id="demo1" tabindex="-1"><a class="header-anchor" href="#demo1" aria-hidden="true">#</a> Demo1</h3><div class="language-java ext-java line-numbers-mode"><pre class="language-java"><code><span class="token doc-comment comment">/**
+ * 被动引用 Demo1:
+ * 通过子类引用父类的静态字段，不会导致子类初始化。
+ *
+ * <span class="token keyword">@author</span> ylb
+ *
+ */</span>
+<span class="token keyword">class</span> <span class="token class-name">SuperClass</span> <span class="token punctuation">{</span>
+    <span class="token keyword">static</span> <span class="token punctuation">{</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;SuperClass init!&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">int</span> value <span class="token operator">=</span> <span class="token number">123</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">class</span> <span class="token class-name">SubClass</span> <span class="token keyword">extends</span> <span class="token class-name">SuperClass</span> <span class="token punctuation">{</span>
+    <span class="token keyword">static</span> <span class="token punctuation">{</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;SubClass init!&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">NotInitialization</span> <span class="token punctuation">{</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token class-name">SubClass</span><span class="token punctuation">.</span>value<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">// SuperClass init!</span>
+    <span class="token punctuation">}</span>
+
+<span class="token punctuation">}</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>对于静态字段，只有直接定义这个字段的类才会被初始化，因此通过其子类来引用父类中定义的静态字段，只会触发父类的初始化而不会触发子类的初始化。</p><h3 id="demo2" tabindex="-1"><a class="header-anchor" href="#demo2" aria-hidden="true">#</a> Demo2</h3><div class="language-java ext-java line-numbers-mode"><pre class="language-java"><code><span class="token doc-comment comment">/**
+ * 被动引用 Demo2:
+ * 通过数组定义来引用类，不会触发此类的初始化。
+ *
+ * <span class="token keyword">@author</span> ylb
+ *
+ */</span>
+
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">NotInitialization</span> <span class="token punctuation">{</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token class-name">SuperClass</span><span class="token punctuation">[</span><span class="token punctuation">]</span> superClasses <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">SuperClass</span><span class="token punctuation">[</span><span class="token number">10</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+<span class="token punctuation">}</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>这段代码不会触发父类的初始化，但会触发“[L 全类名”这个类的初始化，它由虚拟机自动生成，直接继承自 java.lang.Object，创建动作由字节码指令 newarray 触发。</p><h3 id="demo3" tabindex="-1"><a class="header-anchor" href="#demo3" aria-hidden="true">#</a> Demo3</h3><div class="language-java ext-java line-numbers-mode"><pre class="language-java"><code><span class="token doc-comment comment">/**
+ * 被动引用 Demo3:
+ * 常量在编译阶段会存入调用类的常量池中，本质上并没有直接引用到定义常量的类，因此不会触发定义常量的类的初始化。
+ *
+ * <span class="token keyword">@author</span> ylb
+ *
+ */</span>
+<span class="token keyword">class</span> <span class="token class-name">ConstClass</span> <span class="token punctuation">{</span>
+    <span class="token keyword">static</span> <span class="token punctuation">{</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;ConstClass init!&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">final</span> <span class="token class-name">String</span> <span class="token constant">HELLO_BINGO</span> <span class="token operator">=</span> <span class="token string">&quot;Hello Bingo&quot;</span><span class="token punctuation">;</span>
+
+<span class="token punctuation">}</span>
+
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">NotInitialization</span> <span class="token punctuation">{</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token class-name">ConstClass</span><span class="token punctuation">.</span><span class="token constant">HELLO_BINGO</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+<span class="token punctuation">}</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>编译通过之后，常量存储到 NotInitialization 类的常量池中，NotInitialization 的 Class 文件中并没有 ConstClass 类的符号引用入口，这两个类在编译成 Class 之后就没有任何联系了。</p><h2 id="接口的加载过程" tabindex="-1"><a class="header-anchor" href="#接口的加载过程" aria-hidden="true">#</a> 接口的加载过程</h2><p>接口加载过程与类加载过程稍有不同。</p><p>当一个类在初始化时，要求其父类全部都已经初始化过了，但是一个接口在初始化时，并不要求其父接口全部都完成了初始化，当真正用到父接口的时候才会初始化。</p></div><!--[--><!--]--></div><footer class="page-meta"><!----><div class="meta-item last-updated"><span class="meta-item-label">Last Updated: </span><!----></div><div class="meta-item contributors"><span class="meta-item-label">Contributors: </span><span class="meta-item-info"><!--[--><!--[--><span class="contributor" title="email: szuyanglb@outlook.com">yanglbme</span><!--[-->, <!--]--><!--]--><!--[--><span class="contributor" title="email: szuyanglb@outlook.com">Yang Libin</span><!--[-->, <!--]--><!--]--><!--[--><span class="contributor" title="email: yanglbme@users.noreply.github.com">yanglbme</span><!----><!--]--><!--]--></span></div></footer><!----><!--[--><!--]--></main><!--]--></div><!----><!--]--></div>
+    <script type="module" src="/jvm/assets/app.29af9a14.js" defer></script>
+  </body>
+</html>
