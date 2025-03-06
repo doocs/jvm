@@ -1,11 +1,10 @@
 # Java 虚拟机底层原理知识总结
 
-<a href="https://github.com/doocs/jvm/actions?query=workflow%3ASync"><img src="https://github.com/doocs/jvm/workflows/Sync/badge.svg"></a>
 <a href="https://github.com/doocs/jvm/blob/main/LICENSE"><img src="https://badgen.net/github/license/doocs/jvm?color=green" alt="license"></a>
-<a href="https://github.com/doocs/jvm/issues"><img src="https://badgen.net/github/open-issues/doocs/jvm" alt="issues"></a>
 <a href="https://github.com/doocs/jvm/stargazers"><img src="https://badgen.net/github/stars/doocs/jvm" alt="stars"></a>
 <a href="https://github.com/doocs/jvm"><img src="https://badgen.net/badge/⭐/GitHub/blue" alt="github"></a>
 <a href="https://gitee.com/doocs/jvm"><img src="https://badgen.net/badge/⭐/Gitee/blue" alt="gitee"></a>
+<a href="https://gitcode.com/doocs/jvm"><img src="https://badgen.net/badge/⭐/GitCode/blue" alt="GitCode"></a>
 <a href="http://makeapullrequest.com"><img src="https://badgen.net/badge/PRs/welcome/cyan" alt="PRs Welcome"></a>
 <a href="https://github.com/doocs/doocs.github.io"><img src="https://badgen.net/badge/organization/join%20us/cyan" alt="open-source-organization"></a>
 
@@ -26,12 +25,7 @@
 
 ## 站点
 
-本项目使用开源小工具 [Gitee Pages Actions](https://github.com/yanglbme/gitee-pages-action) 实现站点的自动部署更新。
-
-目前支持以下两个站点访问：
-
-- Gitee Pages: https://doocs.gitee.io/jvm
-- GitHub Pages: https://doocs.github.io/jvm
+https://doocs.github.io/jvm
 
 ## 写作规范
 
