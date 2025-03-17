@@ -25,7 +25,7 @@
 
 ## 站点
 
-https://doocs.github.io/jvm
+[https://jvm.doocs.org](https://jvm.doocs.org)
 
 ## 写作规范
 

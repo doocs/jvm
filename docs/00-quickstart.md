@@ -27,12 +27,7 @@
 
 ## 站点
 
-本项目使用开源小工具 [Gitee Pages Actions](https://github.com/yanglbme/gitee-pages-action) 实现站点的自动部署更新。
-
-目前支持以下两个站点访问：
-
-- [Gitee Pages](https://doocs.gitee.io/jvm)
-- [GitHub Pages](https://doocs.github.io/jvm)
+[https://jvm.doocs.org](https://jvm.doocs.org)
 
 ## 写作规范
 
@@ -60,7 +55,7 @@ Doocs 技术社区，致力于打造一个内容完整、持续成长的互联�
 
 ## 贡献者
 
-感谢以下所有朋友对 [Doocs 技术社区](https://github.com/doocs) 所做出的贡献，[参与项目维护请戳这儿](https://doocs.github.io/#/?id=how-to-join)。
+感谢以下所有朋友对 [Doocs 技术社区](https://github.com/doocs) 所做出的贡献，[参与项目维护请戳这儿](https://doocs.org/#/?id=how-to-join)。
 
 <!-- ALL-CONTRIBUTORS-LIST: START - Do not remove or modify this section -->
 

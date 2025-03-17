@@ -39,6 +39,7 @@ jobs:
         with:
           target_branch: gh-pages
           build_dir: docs/.vuepress/dist
+          fqdn: jvm.doocs.org
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
@@ -54,11 +55,3 @@ jobs:
         with:
           source-repo: git@github.com:doocs/jvm.git
           destination-repo: git@gitee.com:Doocs/jvm.git
-
-      - name: Build Gitee Pages
-        uses: yanglbme/gitee-pages-action@main
-        with:
-          gitee-username: yanglbme
-          gitee-password: ${{ secrets.GITEE_PASSWORD }}
-          gitee-repo: doocs/jvm
-          branch: gh-pages
