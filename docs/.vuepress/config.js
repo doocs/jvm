@@ -1,5 +1,6 @@
 import { viteBundler } from '@vuepress/bundler-vite'
 import { defaultTheme } from '@vuepress/theme-default'
+import { googleAnalyticsPlugin } from '@vuepress/plugin-google-analytics'
 import { defineUserConfig } from 'vuepress'
 
 export default defineUserConfig({
@@ -58,6 +59,9 @@ export default defineUserConfig({
       {
         isSearchable: page => page.path !== '/',
       },
+      googleAnalyticsPlugin({
+        id: 'G-7W625EPRG6',
+      }),
     ],
   ],
 })
