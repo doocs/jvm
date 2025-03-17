@@ -1,4 +1,10 @@
-module.exports = {
+import { viteBundler } from '@vuepress/bundler-vite'
+import { defaultTheme } from '@vuepress/theme-default'
+import { defineUserConfig } from 'vuepress'
+
+export default defineUserConfig({
+  bundler: viteBundler(),
+  theme: defaultTheme(),
   lang: 'zh-CN',
   title: 'JVM 底层原理最全知识总结',
   description: 'Doocs开源社区',
@@ -11,7 +17,7 @@ module.exports = {
       },
     ],
   ],
-  base: '/jvm/',
+  base: '/',
   themeConfig: {
     repo: 'doocs/jvm',
     logo: 'https://avatars.githubusercontent.com/u/43716716?s=200&v=4',
@@ -54,4 +60,4 @@ module.exports = {
       },
     ],
   ],
-};
+})

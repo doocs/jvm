@@ -10,9 +10,12 @@
     "docs:build": "vuepress build docs"
   },
   "devDependencies": {
-    "@vuepress/plugin-search": "2.0.0-beta.49",
+    "@vuepress/bundler-vite": "^2.0.0-rc.20",
+    "@vuepress/plugin-search": "2.0.0-rc.83",
+    "@vuepress/theme-default": "^2.0.0-rc.84",
     "prettier": "2.8.8",
-    "vuepress": "2.0.0-beta.49"
+    "sass-embedded": "^1.85.1",
+    "vuepress": "2.0.0-rc.20"
   },
   "repository": {
     "type": "git",
