@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="generator" content="VuePress 2.0.0-rc.20" />
+    <style>
+      :root {
+        --vp-c-bg: #fff;
+      }
+
+      [data-theme='dark'] {
+        --vp-c-bg: #1b1b1f;
+      }
+
+      html,
+      body {
+        background-color: var(--vp-c-bg);
+      }
+    </style>
+    <script>
+      const useChoice = localStorage.getItem('vuepress-color-scheme')
+      const systemStatus =
+        'matchMedia' in window
+          ? window.matchMedia('(prefers-color-scheme: dark)').matches
+          : false
+
+      if (useChoice === 'light') {
+        document.documentElement.dataset.theme = 'light'
+      } else if (useChoice === 'dark' || systemStatus) {
+        document.documentElement.dataset.theme = 'dark'
+      }
+    </script>
+    <link rel="icon" href="https://avatars.githubusercontent.com/u/43716716?s=200&v=4"><title>JVM 性能调优 | JVM 底层原理最全知识总结</title><meta name="description" content="Doocs开源社区">
+    <link rel="preload" href="/assets/style-CtGLpmmz.css" as="style"><link rel="stylesheet" href="/assets/style-CtGLpmmz.css">
+    <link rel="modulepreload" href="/assets/app-BbxH2Yoy.js"><link rel="modulepreload" href="/assets/06-jvm-performance-tuning.html-C-gi2XEr.js">
+    <link rel="prefetch" href="/assets/00-quickstart.html-Bkd7iQCc.js" as="script"><link rel="prefetch" href="/assets/01-jvm-memory-structure.html-DtXQY6o8.js" as="script"><link rel="prefetch" href="/assets/02-hotspot-jvm-object.html-Ef92pTHu.js" as="script"><link rel="prefetch" href="/assets/03-gc-algorithms.html-DOFVpCUA.js" as="script"><link rel="prefetch" href="/assets/04-hotspot-gc.html-Bft3u-kW.js" as="script"><link rel="prefetch" href="/assets/05-memory-allocation-gc.html-hQ3xrNbc.js" as="script"><link rel="prefetch" href="/assets/07-class-structure.html-DqNW6KGa.js" as="script"><link rel="prefetch" href="/assets/08-load-class-time.html-kzBOqXoK.js" as="script"><link rel="prefetch" href="/assets/09-load-class-process.html-ZsuinVKn.js" as="script"><link rel="prefetch" href="/assets/10-class-loader.html-CEyP8Ust.js" as="script"><link rel="prefetch" href="/assets/index.html-ni9e0dsT.js" as="script"><link rel="prefetch" href="/assets/summary.html-BXsiYrLL.js" as="script"><link rel="prefetch" href="/assets/404.html-CBzju--6.js" as="script">
+  </head>
+  <body>
+    <div id="app"><!--[--><div class="vp-theme-container external-link-icon" vp-container><!--[--><header class="vp-navbar" vp-navbar><div class="vp-toggle-sidebar-button" title="toggle sidebar" aria-expanded="false" role="button" tabindex="0"><div class="icon" aria-hidden="true"><span></span><span></span><span></span></div></div><span><a class="route-link" href="/"><!----><span class="vp-site-name" aria-hidden="true">JVM 底层原理最全知识总结</span></a></span><div class="vp-navbar-items-wrapper" style=""><!--[--><!--]--><!----><!--[--><!--]--><button type="button" class="vp-toggle-color-mode-button" title="toggle color mode"><svg class="light-icon" viewbox="0 0 32 32" style=""><path d="M16 12.005a4 4 0 1 1-4 4a4.005 4.005 0 0 1 4-4m0-2a6 6 0 1 0 6 6a6 6 0 0 0-6-6z" fill="currentColor"></path><path d="M5.394 6.813l1.414-1.415l3.506 3.506L8.9 10.318z" fill="currentColor"></path><path d="M2 15.005h5v2H2z" fill="currentColor"></path><path d="M5.394 25.197L8.9 21.691l1.414 1.415l-3.506 3.505z" fill="currentColor"></path><path d="M15 25.005h2v5h-2z" fill="currentColor"></path><path d="M21.687 23.106l1.414-1.415l3.506 3.506l-1.414 1.414z" fill="currentColor"></path><path d="M25 15.005h5v2h-5z" fill="currentColor"></path><path d="M21.687 8.904l3.506-3.506l1.414 1.415l-3.506 3.505z" fill="currentColor"></path><path d="M15 2.005h2v5h-2z" fill="currentColor"></path></svg><svg class="dark-icon" viewbox="0 0 32 32" style="display:none;"><path d="M13.502 5.414a15.075 15.075 0 0 0 11.594 18.194a11.113 11.113 0 0 1-7.975 3.39c-.138 0-.278.005-.418 0a11.094 11.094 0 0 1-3.2-21.584M14.98 3a1.002 1.002 0 0 0-.175.016a13.096 13.096 0 0 0 1.825 25.981c.164.006.328 0 .49 0a13.072 13.072 0 0 0 10.703-5.555a1.01 1.01 0 0 0-.783-1.565A13.08 13.08 0 0 1 15.89 4.38A1.015 1.015 0 0 0 14.98 3z" fill="currentColor"></path></svg></button><!----></div></header><!--]--><div class="vp-sidebar-mask"></div><!--[--><aside class="vp-sidebar" vp-sidebar><!----><!--[--><!--]--><ul class="vp-sidebar-items"><!--[--><li><p tabindex="0" class="vp-sidebar-item vp-sidebar-heading">JVM 性能调优 <!----></p><!----></li><!--]--></ul><!--[--><!--]--></aside><!--]--><!--[--><main class="vp-page"><!--[--><!--]--><div vp-content><!--[--><!--]--><div><h1 id="jvm-性能调优" tabindex="-1"><a class="header-anchor" href="#jvm-性能调优"><span>JVM 性能调优</span></a></h1><p>在高性能硬件上部署程序，目前主要有两种方式：</p><ul><li>通过 64 位 JDK 来使用大内存；</li><li>使用若干个 32 位虚拟机建立逻辑集群来利用硬件资源。</li></ul><h2 id="使用-64-位-jdk-管理大内存" tabindex="-1"><a class="header-anchor" href="#使用-64-位-jdk-管理大内存"><span>使用 64 位 JDK 管理大内存</span></a></h2><p>堆内存变大后，虽然垃圾收集的频率减少了，但每次垃圾回收的时间变长。 如果堆内存为 14 G，那么每次 Full GC 将长达数十秒。如果 Full GC 频繁发生，那么对于一个网站来说是无法忍受的。</p><p>对于用户交互性强、对停顿时间敏感的系统，可以给 Java 虚拟机分配超大堆的前提是有把握把应用程序的 Full GC 频率控制得足够低，至少要低到不会影响用户使用。</p><p>可能面临的问题：</p><ul><li>内存回收导致的长时间停顿；</li><li>现阶段，64 位 JDK 的性能普遍比 32 位 JDK 低；</li><li>需要保证程序足够稳定，因为这种应用要是产生堆溢出几乎就无法产生堆转储快照（因为要产生超过 10GB 的 Dump 文件），哪怕产生了快照也几乎无法进行分析；</li><li>相同程序在 64 位 JDK 消耗的内存一般比 32 位 JDK 大，这是由于指针膨胀，以及数据类型对齐补白等因素导致的。</li></ul><h2 id="使用-32-位-jvm-建立逻辑集群" tabindex="-1"><a class="header-anchor" href="#使用-32-位-jvm-建立逻辑集群"><span>使用 32 位 JVM 建立逻辑集群</span></a></h2><p>在一台物理机器上启动多个应用服务器进程，每个服务器进程分配不同端口， 然后在前端搭建一个负载均衡器，以反向代理的方式来分配访问请求。</p><p>考虑到在一台物理机器上建立逻辑集群的目的仅仅是为了尽可能利用硬件资源，并不需要关心状态保留、热转移之类的高可用性能需求， 也不需要保证每个虚拟机进程有绝对的均衡负载，因此使用无 Session 复制的亲合式集群是一个不错的选择。 我们仅仅需要保障集群具备亲合性，也就是均衡器按一定的规则算法（一般根据 SessionID 分配） 将一个固定的用户请求永远分配到固定的一个集群节点进行处理即可。</p><p>可能遇到的问题：</p><ul><li>尽量避免节点竞争全局资源，如磁盘竞争，各个节点如果同时访问某个磁盘文件的话，很可能导致 IO 异常；</li><li>很难高效利用资源池，如连接池，一般都是在节点建立自己独立的连接池，这样有可能导致一些节点池满了而另外一些节点仍有较多空余；</li><li>各个节点受到 32 位的内存限制；</li><li>大量使用本地缓存的应用，在逻辑集群中会造成较大的内存浪费，因为每个逻辑节点都有一份缓存，这时候可以考虑把本地缓存改成集中式缓存。</li></ul><h2 id="调优案例分析与实战" tabindex="-1"><a class="header-anchor" href="#调优案例分析与实战"><span>调优案例分析与实战</span></a></h2><h3 id="场景描述" tabindex="-1"><a class="header-anchor" href="#场景描述"><span>场景描述</span></a></h3><p>一个小型系统，使用 32 位 JDK，4G 内存，测试期间发现服务端不定时抛出内存溢出异常。 加入 -XX:+HeapDumpOnOutOfMemoryError（添加这个参数后，堆内存溢出时就会输出异常日志）， 但再次发生内存溢出时，没有生成相关异常日志。</p><h3 id="分析" tabindex="-1"><a class="header-anchor" href="#分析"><span>分析</span></a></h3><p>在 32 位 JDK 上，1.6G 分配给堆，还有一部分分配给 JVM 的其他内存，直接内存最大也只能在剩余的 0.4G 空间中分出一部分， 如果使用了 NIO，JVM 会在 JVM 内存之外分配内存空间，那么就要小心“直接内存”不足时发生内存溢出异常了。</p><h3 id="直接内存的回收过程" tabindex="-1"><a class="header-anchor" href="#直接内存的回收过程"><span>直接内存的回收过程</span></a></h3><p>直接内存虽然不是 JVM 内存空间，但它的垃圾回收也由 JVM 负责。</p><p>垃圾收集进行时，虚拟机虽然会对直接内存进行回收， 但是直接内存却不能像新生代、老年代那样，发现空间不足了就通知收集器进行垃圾回收， 它只能等老年代满了后 Full GC，然后“顺便”帮它清理掉内存的废弃对象。 否则只能一直等到抛出内存溢出异常时，先 catch 掉，再在 catch 块里大喊 “<code>System.gc()</code>”。 要是虚拟机还是不听，那就只能眼睁睁看着堆中还有许多空闲内存，自己却不得不抛出内存溢出异常了。</p></div><!--[--><!--]--></div><footer class="vp-page-meta"><!----><div class="vp-meta-item git-info"><div class="vp-meta-item last-updated"><span class="meta-item-label">Last Updated: </span><!----></div><div class="vp-meta-item contributors"><span class="meta-item-label">Contributors: </span><span class="meta-item-info"><!--[--><!--[--><span class="contributor" title="email: szuyanglb@outlook.com">杨立滨</span><!--[-->, <!--]--><!--]--><!--[--><span class="contributor" title="email: szuyanglb@outlook.com">yanglbme</span><!--[-->, <!--]--><!--]--><!--[--><span class="contributor" title="email: contact@yanglibin.info">杨立滨</span><!----><!--]--><!--]--></span></div></div></footer><!----><!--[--><!--]--></main><!--]--></div><!--[--><!----><!--]--><!--]--></div>
+    <script type="module" src="/assets/app-BbxH2Yoy.js" defer></script>
+  </body>
+</html>

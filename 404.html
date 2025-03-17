@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="generator" content="VuePress 2.0.0-rc.20" />
+    <style>
+      :root {
+        --vp-c-bg: #fff;
+      }
+
+      [data-theme='dark'] {
+        --vp-c-bg: #1b1b1f;
+      }
+
+      html,
+      body {
+        background-color: var(--vp-c-bg);
+      }
+    </style>
+    <script>
+      const useChoice = localStorage.getItem('vuepress-color-scheme')
+      const systemStatus =
+        'matchMedia' in window
+          ? window.matchMedia('(prefers-color-scheme: dark)').matches
+          : false
+
+      if (useChoice === 'light') {
+        document.documentElement.dataset.theme = 'light'
+      } else if (useChoice === 'dark' || systemStatus) {
+        document.documentElement.dataset.theme = 'dark'
+      }
+    </script>
+    <link rel="icon" href="https://avatars.githubusercontent.com/u/43716716?s=200&v=4"><title>JVM 底层原理最全知识总结</title><meta name="description" content="Doocs开源社区">
+    <link rel="preload" href="/assets/style-CtGLpmmz.css" as="style"><link rel="stylesheet" href="/assets/style-CtGLpmmz.css">
+    <link rel="modulepreload" href="/assets/app-BbxH2Yoy.js"><link rel="modulepreload" href="/assets/404.html-CBzju--6.js">
+    <link rel="prefetch" href="/assets/00-quickstart.html-Bkd7iQCc.js" as="script"><link rel="prefetch" href="/assets/01-jvm-memory-structure.html-DtXQY6o8.js" as="script"><link rel="prefetch" href="/assets/02-hotspot-jvm-object.html-Ef92pTHu.js" as="script"><link rel="prefetch" href="/assets/03-gc-algorithms.html-DOFVpCUA.js" as="script"><link rel="prefetch" href="/assets/04-hotspot-gc.html-Bft3u-kW.js" as="script"><link rel="prefetch" href="/assets/05-memory-allocation-gc.html-hQ3xrNbc.js" as="script"><link rel="prefetch" href="/assets/06-jvm-performance-tuning.html-C-gi2XEr.js" as="script"><link rel="prefetch" href="/assets/07-class-structure.html-DqNW6KGa.js" as="script"><link rel="prefetch" href="/assets/08-load-class-time.html-kzBOqXoK.js" as="script"><link rel="prefetch" href="/assets/09-load-class-process.html-ZsuinVKn.js" as="script"><link rel="prefetch" href="/assets/10-class-loader.html-CEyP8Ust.js" as="script"><link rel="prefetch" href="/assets/index.html-ni9e0dsT.js" as="script"><link rel="prefetch" href="/assets/summary.html-BXsiYrLL.js" as="script">
+  </head>
+  <body>
+    <div id="app"><!--[--><div class="vp-theme-container" vp-container data-v-326465ab><main class="page" data-v-326465ab><div vp-content data-v-326465ab><h1 data-v-326465ab>404</h1><blockquote data-v-326465ab>How did we get here?</blockquote><a class="route-link" href="/" data-v-326465ab>Take me home</a></div></main></div><!--[--><!----><!--]--><!--]--></div>
+    <script type="module" src="/assets/app-BbxH2Yoy.js" defer></script>
+  </body>
+</html>
