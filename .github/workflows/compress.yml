@@ -11,7 +11,7 @@ jobs:
     if: github.repository == 'doocs/jvm'
     steps:
       - name: Checkout Branch
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       - name: Compress Images
         id: calibre
