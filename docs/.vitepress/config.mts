@@ -103,4 +103,7 @@ export default defineConfig({
     ]
   ],
   cleanUrls: true,
+  sitemap: {
+    hostname: 'https://jvm.doocs.org'
+  }
 })
