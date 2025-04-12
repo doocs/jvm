@@ -16,7 +16,7 @@ export default defineConfig({
       message: 'Released under the CC-BY-SA-4.0 license.',
       copyright: 'Copyright © 2018-present Doocs'
     },
-    logo: '/favicon.ico',
+    logo: '/favicon.png',
     docFooter: {
       prev: '上一页',
       next: '下一页'
@@ -88,7 +88,7 @@ export default defineConfig({
     ]
   },
   head: [
-    ['link', { rel: 'icon', href: '/favicon.ico' }],
+    ['link', { rel: 'icon', type: 'image/png', href: '/favicon.png' }],
     [
       'script',
       { async: '', src: 'https://www.googletagmanager.com/gtag/js?id=G-7W625EPRG6' }
