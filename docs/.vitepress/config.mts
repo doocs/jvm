@@ -21,6 +21,17 @@ export default defineConfig({
       prev: '上一页',
       next: '下一页'
     },
+    editLink: {
+      pattern: 'https://github.com/doocs/jvm/edit/main/docs/:path',
+      text: '在 GitHub 编辑'
+    },
+    lastUpdated: {
+      text: 'Updated at',
+      formatOptions: {
+        dateStyle: 'full',
+        timeStyle: 'medium'
+      }
+    },
     sidebar: [
       {
         items: [
@@ -75,5 +86,21 @@ export default defineConfig({
     socialLinks: [
       { icon: 'github', link: 'https://github.com/doocs/jvm' }
     ]
-  }
+  },
+  head: [
+    ['link', { rel: 'icon', href: '/favicon.ico' }],
+    [
+      'script',
+      { async: '', src: 'https://www.googletagmanager.com/gtag/js?id=G-7W625EPRG6' }
+    ],
+    [
+      'script',
+      {},
+      `window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-7W625EPRG6');`
+    ]
+  ],
+  cleanUrls: true,
 })

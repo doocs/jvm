@@ -6,12 +6,12 @@ hero:
   name: "JVM 底层原理最全知识总结"
   tagline: 
   actions:
-    - theme: brand
-      text: 开始学习
-      link: /00-quickstart
     - theme: alt
       text: 作者主页
       link: https://github.com/yanglbme
+    - theme: brand
+      text: 开始学习
+      link: /00-quickstart
 
 features:
   - title: JVM 内存结构
