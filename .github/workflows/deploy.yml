@@ -17,19 +17,23 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: latest
+          node-version: 22
+          cache: npm
+      
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
 
       - name: Install dependencies
-        run: npm install
+        run: npm ci
 
-      - name: Build VuePress site
-        run: yarn docs:build
+      - name: Build with VitePress
+        run: npm run docs:build
 
       - name: Deploy to GitHub Pages
         uses: crazy-max/ghaction-github-pages@v4
         with:
           target_branch: gh-pages
-          build_dir: docs/.vuepress/dist
+          build_dir: docs/.vitepress/dist
           fqdn: jvm.doocs.org
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

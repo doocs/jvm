@@ -1,15 +1,5 @@
 # 开始学习
 
-<a href="https://github.com/doocs/jvm/actions?query=workflow%3ASync"><img src="https://github.com/doocs/jvm/workflows/Sync/badge.svg"></a>
-<a href="https://github.com/doocs/jvm/blob/main/LICENSE"><img src="https://badgen.net/github/license/doocs/jvm?color=green" alt="license"></a>
-<a href="https://github.com/doocs/jvm/issues"><img src="https://badgen.net/github/open-issues/doocs/jvm" alt="issues"></a>
-<a href="https://github.com/doocs/jvm/stargazers"><img src="https://badgen.net/github/stars/doocs/jvm" alt="stars"></a>
-<a href="https://github.com/doocs/jvm"><img src="https://badgen.net/badge/⭐/GitHub/blue" alt="github"></a>
-<a href="https://gitee.com/doocs/jvm"><img src="https://badgen.net/badge/⭐/Gitee/blue" alt="gitee"></a>
-<a href="http://makeapullrequest.com"><img src="https://badgen.net/badge/PRs/welcome/cyan" alt="PRs Welcome"></a>
-<a href="https://github.com/doocs/doocs.github.io"><img src="https://badgen.net/badge/organization/join%20us/cyan" alt="open-source-organization"></a>
-<a href="https://app.fossa.com/projects/git%2Bgithub.com%2Fdoocs%2Fjvm?ref=badge_shield" alt="FOSSA Status"><img src="https://app.fossa.com/api/projects/git%2Bgithub.com%2Fdoocs%2Fjvm.svg?type=shield"/></a>
-
 这里仅仅记录了一些笔者认为需要重点掌握的 JVM 知识点，如果你想更加全面地了解 JVM 底层原理，可以阅读周志明老师《深入理解 Java 虚拟机——JVM 高级特性与最佳实践(第 2/3 版)》全书。
 
 ## 清单
@@ -67,16 +57,8 @@ Doocs 技术社区，致力于打造一个内容完整、持续成长的互联�
 
 [Doocs](https://github.com/doocs) 技术社区旗下唯一公众号「**Doocs**」​，欢迎扫码关注，**专注分享技术领域相关知识及行业最新资讯**。当然，也可以加我个人微信（备注：GitHub），拉你进技术交流群。
 
-<table>
-  <tr>
-    <td align="center" style="width: 260px;">
-      <img src="https://cdn-doocs.oss-cn-shenzhen.aliyuncs.com/gh/doocs/images/qrcode-for-doocs.png" style="width: 400px;"><br>
-    </td>
-    <td align="center" style="width: 260px;">
-      <img src="https://cdn-doocs.oss-cn-shenzhen.aliyuncs.com/gh/doocs/images/qrcode-for-yanglbme.png" style="width: 400px;"><br>
-    </td>
-  </tr>
-</table>
+| ![QRCode 1](https://cdn-doocs.oss-cn-shenzhen.aliyuncs.com/gh/doocs/images/qrcode-for-doocs.png) | ![QRCode 2](https://cdn-doocs.oss-cn-shenzhen.aliyuncs.com/gh/doocs/images/qrcode-for-yanglbme.png) |
+|:--------------------------------------------:|:---------------------------------------------:|
 
 关注「**Doocs**」公众号，回复 **JVM**，即可获取本项目离线 PDF 文档，学习更加方便！
 

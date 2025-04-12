@@ -1,0 +1,79 @@
+import { defineConfig } from 'vitepress'
+
+// https://vitepress.dev/reference/site-config
+export default defineConfig({
+  title: "JVM 底层原理最全知识总结",
+  description: "Doocs 开源社区",
+  themeConfig: {
+    // https://vitepress.dev/reference/default-theme-config
+    nav: [
+      { text: '首页', link: '/' },
+    ],
+    search: {
+      provider: 'local'
+    },
+    footer: {
+      message: 'Released under the CC-BY-SA-4.0 license.',
+      copyright: 'Copyright © 2018-present Doocs'
+    },
+    logo: '/favicon.ico',
+    docFooter: {
+      prev: '上一页',
+      next: '下一页'
+    },
+    sidebar: [
+      {
+        items: [
+          {
+            'text': '开始学习',
+            'link': '/00-quickstart'
+          },
+          {
+            'text': 'JVM 内存结构',
+            'link': '/01-jvm-memory-structure'
+          },
+          {
+            'text': 'HotSpot 虚拟机对象探秘',
+            'link': '/02-hotspot-jvm-object',
+          },
+          {
+            'text': '垃圾收集策略与算法',
+            'link': '/03-gc-algorithms'
+          },
+          {
+            'text': 'HotSpot 垃圾收集器',
+            'link': '/04-hotspot-gc'
+          },
+          {
+            'text': '内存分配与回收策略',
+            'link': '/05-memory-allocation-gc'
+          },
+          {
+            'text': 'JVM 性能调优',
+            'link': '/06-jvm-performance-tuning'
+          },
+          {
+            'text': '类文件结构',
+            'link': '/07-class-structure'
+          },
+          {
+            'text': '类加载的时机',
+            'link': '/08-load-class-time'
+          },
+          {
+            'text': '类加载的过程',
+            'link': '/09-load-class-process'
+          },
+          {
+            'text': '类加载器',
+            'link': '/10-class-loader'
+          }
+        ],
+      },
+    ],
+
+    socialLinks: [
+      { icon: 'github', link: 'https://github.com/doocs/jvm' }
+    ]
+  }
+})

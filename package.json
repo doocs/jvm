@@ -5,27 +5,24 @@
   "directories": {
     "doc": "docs"
   },
-  "scripts": {
-    "docs:dev": "vuepress dev docs",
-    "docs:build": "vuepress build docs"
-  },
-  "devDependencies": {
-    "@vuepress/bundler-vite": "^2.0.0-rc.20",
-    "@vuepress/plugin-google-analytics": "^2.0.0-rc.80",
-    "@vuepress/plugin-search": "2.0.0-rc.83",
-    "@vuepress/theme-default": "^2.0.0-rc.84",
-    "prettier": "2.8.8",
-    "sass-embedded": "^1.85.1",
-    "vuepress": "2.0.0-rc.20"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/doocs/jvm.git"
   },
+  "keywords": [
+    "jvm"
+  ],
   "author": "yanglbme",
-  "license": "CC-BY-NC-SA",
   "bugs": {
     "url": "https://github.com/doocs/jvm/issues"
   },
-  "homepage": "https://github.com/doocs/jvm#readme"
+  "homepage": "https://jvm.doocs.org",
+  "devDependencies": {
+    "vitepress": "^1.6.3"
+  },
+  "scripts": {
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "vitepress build docs",
+    "docs:preview": "vitepress preview docs"
+  }
 }
