@@ -2,7 +2,7 @@ import { defineConfig } from 'vitepress'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  title: "JVM 底层原理最全知识总结",
+  title: "jvm",
   description: "Doocs 开源社区",
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
@@ -14,7 +14,7 @@ export default defineConfig({
     },
     footer: {
       message: 'Released under the CC-BY-SA-4.0 license.',
-      copyright: 'Copyright © 2018-present Doocs'
+      copyright: `Copyright © 2018-${new Date().getFullYear()} <a href="https://github.com/doocs">Doocs</a>`
     },
     logo: '/favicon.png',
     docFooter: {
