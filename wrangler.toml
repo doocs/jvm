@@ -1,0 +1,8 @@
+name = "jvm"
+main = "worker.js"
+compatibility_date = "2024-10-22"
+workers_dev = true
+
+[assets]
+directory = "docs/.vitepress/dist"
+binding = "ASSETS"

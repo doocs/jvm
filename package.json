@@ -18,11 +18,14 @@
   },
   "homepage": "https://jvm.doocs.org",
   "devDependencies": {
-    "vitepress": "^2.0.0-alpha.12"
+    "vitepress": "^2.0.0-alpha.12",
+    "wrangler": "^4.44.0"
   },
   "scripts": {
     "docs:dev": "vitepress dev docs",
     "docs:build": "vitepress build docs",
-    "docs:preview": "vitepress preview docs"
-  }
+    "docs:preview": "vitepress preview docs",
+    "deploy:cf": "pnpm run docs:build && wrangler deploy"
+  },
+  "packageManager": "pnpm@10.0.0"
 }
