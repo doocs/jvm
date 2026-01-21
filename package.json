@@ -19,7 +19,7 @@
   "homepage": "https://jvm.doocs.org",
   "devDependencies": {
     "vitepress": "^2.0.0-alpha.15",
-    "wrangler": "^4.44.0"
+    "wrangler": "^4.59.1"
   },
   "scripts": {
     "docs:dev": "vitepress dev docs",
