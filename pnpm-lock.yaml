@@ -9,7 +9,7 @@ importers:
   .:
     devDependencies:
       vitepress:
-        specifier: 2.0.0-alpha.17
+        specifier: ^2.0.0-alpha.17
         version: 2.0.0-alpha.17(postcss@8.5.15)
       wrangler:
         specifier: ^4.97.0
