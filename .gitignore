@@ -26,6 +26,7 @@ yarn-error.log*
 
 dist
 lib
+worker-configuration.d.ts
 
 node_modules
 
