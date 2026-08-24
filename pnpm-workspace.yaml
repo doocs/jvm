@@ -3,3 +3,7 @@ overrides:
   nanoid: 3.3.18
   postcss: 8.5.26
   vite: 8.2.2
+
+onlyBuiltDependencies:
+  - esbuild
+  - workerd
