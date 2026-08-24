@@ -17,10 +17,13 @@
     "url": "https://github.com/doocs/jvm/issues"
   },
   "homepage": "https://jvm.doocs.org",
+  "engines": {
+    "node": "^20.19.0 || >=22.12.0"
+  },
   "devDependencies": {
-    "typescript": "^6.0.3",
-    "vitepress": "^2.0.0-alpha.17",
-    "wrangler": "^4.104.0"
+    "typescript": "^7.0.2",
+    "vitepress": "2.0.0-alpha.19",
+    "wrangler": "^4.125.0"
   },
   "scripts": {
     "docs:dev": "vitepress dev docs",
@@ -29,5 +32,17 @@
     "cf:types": "wrangler types",
     "deploy:cf": "pnpm run docs:build && wrangler deploy"
   },
-  "packageManager": "pnpm@10.33.0"
+  "packageManager": "pnpm@10.33.0",
+  "pnpm": {
+    "overrides": {
+      "vite": "8.2.2",
+      "esbuild": "0.28.2",
+      "postcss": "8.5.26",
+      "nanoid": "3.3.18"
+    },
+    "onlyBuiltDependencies": [
+      "esbuild",
+      "workerd"
+    ]
+  }
 }

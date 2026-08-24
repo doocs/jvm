@@ -1,2 +1,5 @@
 overrides:
-  esbuild: '>=0.28.1'
+  esbuild: 0.28.2
+  nanoid: 3.3.18
+  postcss: 8.5.26
+  vite: 8.2.2
