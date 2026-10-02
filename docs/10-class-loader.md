@@ -12,10 +12,10 @@
 
 ### 加载器种类
 
-系统提供了 3 种类加载器：
+常见 HotSpot 配置中的内置类加载器包括启动类加载器、平台类加载器和应用程序类加载器；名称及实现会随 JDK 版本变化：
 
-- 启动类加载器（Bootstrap ClassLoader）： 负责将存放在 `<JAVA_HOME>\lib` 目录中的，并且能被虚拟机识别的（仅按照文件名识别，如 rt.jar，名字不符合的类库即使放在 lib 目录中也不会被加载）类库加载到虚拟机内存中。
-- 扩展类加载器（Extension ClassLoader）： 负责加载 `<JAVA_HOME>\lib\ext` 目录中的所有类库，开发者可以直接使用扩展类加载器。
+- 启动类加载器（Bootstrap ClassLoader）：负责加载虚拟机实现提供的基础类库。JDK 8 及更早版本中，部分类库来自 `<JAVA_HOME>\lib` 下的 `rt.jar` 等文件；JDK 9 起，运行时映像不再使用 `rt.jar`，不能把该目录布局当作通用规则。
+- 平台类加载器（Platform ClassLoader）：JDK 9 起取代扩展类加载器，负责加载平台类。JDK 8 及更早版本使用扩展类加载器（Extension ClassLoader），其扩展目录规则属于旧版实现。
 - 应用程序类加载器（Application ClassLoader）： 由于这个类加载器是 ClassLoader 中的 `getSystemClassLoader()` 方法的返回值，所以一般也称它为“系统类加载器”。它负责加载用户类路径（classpath）上所指定的类库，开发者可以直接使用这个类加载器，如果应用程序中没有自定义过自己的类加载器，一般情况下这个就是程序中默认的类加载器。
 
 ![ClassLoader](https://cdn-doocs.oss-cn-shenzhen.aliyuncs.com/gh/doocs/jvm@main/images/classloader.png)
@@ -26,7 +26,7 @@
 
 ### 什么是双亲委派模型
 
-双亲委派模型是描述类加载器之间的层次关系。它要求除了顶层的启动类加载器外，其余的类加载器都应当有自己的父类加载器。（父子关系一般不会以继承的关系实现，而是以组合关系来复用父加载器的代码）
+双亲委派模型描述常见类加载器的层次关系：除了顶层启动类加载器外，其余加载器通常有父加载器（父子关系一般通过组合实现）。它是 Java 平台的默认委派约定，并非 JVM 对所有自定义类加载器的强制要求；自定义加载器可以改变委派策略。
 
 ### 工作过程
 
