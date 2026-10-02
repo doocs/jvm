@@ -66,7 +66,7 @@ Class 文件的魔数是用 16 进制表示的“CAFE BABE”，是不是很具�
 
 | 类型                             | tag | 描述　                 |
 | -------------------------------- | --- | ---------------------- |
-| CONSTANT_utf8_info               | 1   | UTF-8 编码的字符串     |
+| CONSTANT_Utf8_info               | 1   | Modified UTF-8 编码的字符串 |
 | CONSTANT_Integer_info            | 3   | 整型字面量             |
 | CONSTANT_Float_info              | 4   | 浮点型字面量           |
 | CONSTANT_Long_info               | 5   | 长整型字面量           |
@@ -79,7 +79,10 @@ Class 文件的魔数是用 16 进制表示的“CAFE BABE”，是不是很具�
 | CONSTANT_NameAndType_info        | 12  | 字段或方法的符号引用   |
 | CONSTANT_MethodHandle_info       | 15  | 表示方法句柄           |
 | CONSTANT_MethodType_info         | 16  | 标识方法类型           |
+| CONSTANT_Dynamic_info            | 17  | 动态计算的常量（自 class 文件版本 55.0 起） |
 | CONSTANT_InvokeDynamic_info      | 18  | 表示一个动态方法调用点 |
+| CONSTANT_Module_info             | 19  | 模块（自 class 文件版本 53.0 起） |
+| CONSTANT_Package_info            | 20  | 包（自 class 文件版本 53.0 起） |
 
 对于 CONSTANT_Class_info（此类型的常量代表一个类或者接口的符号引用），它的二维表结构如下：
 
@@ -98,7 +101,7 @@ CONSTANT_Utf8_info 型常量的结构如下：
 | u2   | length | 1      |
 | u1   | bytes  | length |
 
-tag 是当前常量的类型；length 表示这个字符串的长度；bytes 是这个字符串的内容（采用缩略的 UTF8 编码）
+tag 是当前常量的类型；length 表示后续字节的长度；bytes 使用 JVM 规定的 Modified UTF-8 编码，而不是通用 UTF-8。常量池条目的类型和可用版本由 class 文件格式版本限定；上表列出的是部分常见条目，不是完整集合。
 
 ### 访问标志
 
