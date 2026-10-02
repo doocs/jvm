@@ -27,7 +27,7 @@
 
 JVM 给每个对象定义了一个对象年龄计数器。当新生代发生一次 Minor GC 后，存活下来的对象年龄 +1，当年龄超过一定值时，就将超过该值的所有对象转移到老年代中去。
 
-使用 `-XXMaxTenuringThreshold` 设置新生代的最大年龄，只要超过该参数的新生代对象都会被转移到老年代中去。
+在支持该选项的 HotSpot 收集器中，可用 `-XX:MaxTenuringThreshold=<n>` 设置最大晋升年龄。对象晋升时机还会受收集器、年龄分布及自适应策略影响；参数拼写和适用范围应以所用 JDK 文档为准。
 
 ## 动态对象年龄判定
 
@@ -55,8 +55,8 @@ JDK 6 Update 24 之后的规则变为：
    此方法的调用是建议 JVM 进行 Full GC，注意这**只是建议而非一定**，但在很多情况下它会触发 Full GC，从而增加 Full GC 的频率。通常情况下我们只需要让虚拟机自己去管理内存即可，我们可以通过 -XX:+ DisableExplicitGC 来禁止调用 `System.gc()`。
 1. **老年代空间不足**
    老年代空间不足会触发 Full GC 操作，若进行该操作后空间依然不足，则会抛出如下错误：`java.lang.OutOfMemoryError: Java heap space`
-1. **永久代空间不足**
-   JVM 规范中运行时数据区域中的方法区，在 HotSpot 虚拟机中也称为永久代（Permanet Generation），存放一些类信息、常量、静态变量等数据，当系统要加载的类、反射的类和调用的方法较多时，永久代可能会被占满，会触发 Full GC。如果经过 Full GC 仍然回收不了，那么 JVM 会抛出如下错误信息：`java.lang.OutOfMemoryError: PermGen space `
+1. **类元数据空间不足（依 JDK 版本而异）**
+   JDK 7 及以前的 HotSpot 使用永久代承载部分类元数据，可能报告 `java.lang.OutOfMemoryError: PermGen space`。从 JDK 8 起，HotSpot 移除了永久代并以本地内存中的 Metaspace 保存类元数据；达到相应限制时会报告 `java.lang.OutOfMemoryError: Metaspace`。方法区是 JVM 规范中的逻辑区域，不能与某个 HotSpot 代际实现混为一谈。
 1. **CMS GC 时出现 `promotion failed` 和 `concurrent mode failure`**
    promotion failed，就是上文所说的担保失败，而 concurrent mode failure 是在执行 CMS GC 的过程中同时有对象要放入老年代，而此时老年代空间不足造成的。
 1. **统计得到的 Minor GC 晋升到旧生代的平均大小大于老年代的剩余空间。**
