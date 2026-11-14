@@ -22,8 +22,8 @@
   },
   "devDependencies": {
     "typescript": "^7.0.2",
-    "vitepress": "2.0.0-alpha.20",
-    "wrangler": "4.151.1"
+    "vitepress": "2.0.0-alpha.21",
+    "wrangler": "4.162.0"
   },
   "scripts": {
     "docs:dev": "vitepress dev docs",
@@ -32,5 +32,5 @@
     "cf:types": "wrangler types",
     "deploy:cf": "pnpm run docs:build && wrangler deploy"
   },
-  "packageManager": "pnpm@10.34.7"
+  "packageManager": "pnpm@10.34.9"
 }
